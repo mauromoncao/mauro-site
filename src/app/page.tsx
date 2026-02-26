@@ -266,7 +266,9 @@ export default function HomePage() {
             </div>
 
             {/* ── DIREITA — card visual moderno com imagem ── */}
-            <div className="relative order-1 lg:order-2 flex justify-center items-center pb-8 lg:pb-0">
+            <div className="order-1 lg:order-2 flex flex-col items-center gap-4">
+
+              {/* Card principal — sem overflow-hidden no wrapper para badge não ser cortado */}
               <div
                 className="relative w-full max-w-[460px] rounded-3xl overflow-hidden shadow-2xl"
                 style={{
@@ -290,7 +292,7 @@ export default function HomePage() {
                     style={{ background: 'linear-gradient(160deg, rgba(7,24,46,0.72) 0%, rgba(15,35,64,0.55) 50%, rgba(7,24,46,0.80) 100%)' }}
                   />
 
-                  {/* Apenas logo centralizada sobre a imagem */}
+                  {/* Logo centralizada sobre a imagem */}
                   <div className="absolute inset-0 flex items-center justify-center z-10">
                     <img
                       src="/logo-transparent.png"
@@ -327,14 +329,14 @@ export default function HomePage() {
                 <div className="h-[3px] w-full" style={{ background: 'linear-gradient(90deg,transparent,#D4A017,#F0C040,#D4A017,transparent)' }} />
               </div>
 
-              {/* Badge Dr. Ben — DOURADO + foto */}
+              {/* Badge Dr. Ben — ABAIXO do card, fora do overflow */}
               <a
                 href="/assistente-juridico"
-                className="absolute -bottom-4 -right-2 lg:-right-6 rounded-2xl px-3.5 py-2.5 flex items-center gap-2.5 shadow-2xl cursor-pointer hover:scale-105 transition-transform"
-                style={{ background: 'linear-gradient(135deg,#0f2340,#19385C)', border: '2px solid #D4A017', boxShadow: '0 0 18px rgba(212,160,23,0.55), 0 4px 12px rgba(0,0,0,0.5)' }}
+                className="flex items-center gap-2.5 rounded-2xl px-4 py-2.5 shadow-xl hover:scale-105 transition-transform self-end mr-2"
+                style={{ background: 'linear-gradient(135deg,#0f2340,#19385C)', border: '2px solid #D4A017', boxShadow: '0 0 18px rgba(212,160,23,0.45), 0 4px 12px rgba(0,0,0,0.4)' }}
               >
                 <div
-                  className="w-10 h-10 rounded-full p-0.5 shrink-0"
+                  className="w-9 h-9 rounded-full p-0.5 shrink-0"
                   style={{ background: 'linear-gradient(135deg,#D4A017,#F0C040)' }}
                 >
                   <div className="w-full h-full rounded-full overflow-hidden">
@@ -343,7 +345,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <p className="text-[#D4A017] text-xs font-bold leading-none">Dr. Ben</p>
-                  <p className="text-white/80 text-xs mt-0.5 font-semibold">Assistente 24h</p>
+                  <p className="text-white/70 text-xs mt-0.5 font-medium">Assistente 24h</p>
                 </div>
                 <span className="w-2.5 h-2.5 rounded-full bg-green-400 animate-badge-pulse ml-1 shrink-0" />
               </a>
