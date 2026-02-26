@@ -3,7 +3,6 @@
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import LogoMM from '@/components/site/LogoMM';
 
 const areasDropdown = [
   { href: '/areas-de-atuacao',                          label: 'Ver todas as Áreas' },
@@ -89,14 +88,13 @@ export default function Header() {
       <div className="container flex items-center justify-between h-[72px] gap-4">
 
         {/* ── LOGO ── */}
-        <Link href="/" className="flex items-center gap-3 shrink-0">
-          <LogoMM className="h-10 w-10" />
-          <span className="hidden sm:block font-serif text-white leading-tight text-sm">
-            Mauro Monção<br />
-            <span className="text-[#E8B84B] text-[10px] tracking-widest font-sans font-normal uppercase">
-              Advogados Associados
-            </span>
-          </span>
+        <Link href="/" className="flex items-center shrink-0">
+          <img
+            src="/logo-oficial-fundo-branco.png"
+            alt="Mauro Monção Advogados Associados"
+            className="h-12 w-auto object-contain"
+            style={{ filter: 'brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(5deg) brightness(0.85)' }}
+          />
         </Link>
 
         {/* ── DESKTOP NAV ── */}

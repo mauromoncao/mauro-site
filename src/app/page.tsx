@@ -1,12 +1,11 @@
 import type { Metadata } from 'next';
 import SiteLayout from '@/components/site/SiteLayout';
 import Link from 'next/link';
-import LogoMM from '@/components/site/LogoMM';
 
 export const metadata: Metadata = {
-  title: 'Advocacia Tributária e Patrimonial em Parnaíba e São Luís',
+  title: 'Advocacia Tributária e Patrimonial em Parnaíba, Fortaleza e São Luís',
   description:
-    'Mauro Monção Advogados Associados — Direito Tributário, Planejamento Patrimonial, Previdenciário e Empresarial. Atuação em Piauí e Maranhão. Consulta gratuita.',
+    'Mauro Monção Advogados Associados — Direito Tributário, Planejamento Patrimonial, Previdenciário e Empresarial. Atuação em Ceará, Piauí e Maranhão. Consulta gratuita.',
   alternates: { canonical: 'https://mauromoncao.adv.br/' },
 };
 
@@ -14,45 +13,56 @@ const phone = '5586994820054';
 const waMsg = 'Olá! Gostaria de mais informações sobre os serviços jurídicos.';
 const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(waMsg)}`;
 
-/* ─── Áreas de atuação ─── */
+/* ─── Áreas de atuação — com texto curto e longo ─── */
 const areas = [
   {
+    id: 'tributario',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-6 h-6">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
       </svg>
     ),
     title: 'Direito Tributário',
-    sub: 'Defesa fiscal, planejamento e compliance.',
+    sub: 'Defesa estratégica em autuações e processos fiscais, com foco em segurança jurídica e proteção patrimonial.',
+    full: 'Atuação técnica e estratégica na prevenção e solução de litígios fiscais, com foco em segurança jurídica, redução de riscos e eficiência financeira. Abrange consultoria, planejamento, compliance, defesa em autuações, processos administrativos, dívida ativa/execuções fiscais e medidas para proteger caixa e patrimônio diante de constrições.',
   },
   {
+    id: 'planejamento-patrimonial',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-6 h-6">
-        <rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0110 0v4" />
+        <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
+        <line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/>
       </svg>
     ),
-    title: 'Planejamento Patrimonial',
-    sub: 'Holdings, sucessão e proteção de patrimônio.',
+    title: 'Planejamento Patrimonial, Societário e Sucessório',
+    sub: 'Estruturação de holdings e governança para organizar patrimônio, sucessão e continuidade empresarial com previsibilidade.',
+    full: 'Estruturação de soluções para organização do patrimônio e continuidade familiar/empresarial, com governança, proteção patrimonial e racionalidade tributária. Inclui holdings, reorganizações societárias, acordos de sócios, sucessão planejada e instrumentos jurídicos voltados à previsibilidade e estabilidade.',
   },
   {
+    id: 'advocacia-publica',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-6 h-6">
         <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" /><polyline points="9 22 9 12 15 12 15 22" />
       </svg>
     ),
     title: 'Advocacia Pública Municipal',
-    sub: 'Assessoria e contencioso para municípios.',
+    sub: 'Atuação consultiva e contenciosa para municípios, com conformidade, gestão de riscos e respaldo técnico nas decisões.',
+    full: 'Assessoria e atuação contenciosa voltadas à Administração Pública municipal, com foco em conformidade, gestão de riscos e tomada de decisões com respaldo jurídico. Apoio em processos administrativos, orientação normativa, controle de legalidade e defesa institucional em demandas judiciais.',
   },
   {
+    id: 'imobiliario',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-6 h-6">
         <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+        <polyline points="9 22 9 12 15 12 15 22"/>
       </svg>
     ),
     title: 'Direito Imobiliário',
-    sub: 'Due diligence, contratos e regularizações.',
+    sub: 'Segurança jurídica em contratos, regularizações e negociações imobiliárias, com análise documental e redução de riscos.',
+    full: 'Apoio jurídico em negociações e regularizações imobiliárias com foco em segurança documental e redução de riscos. Atuação em compra e venda, contratos, due diligence, registros, posse/propriedade, locações e solução de conflitos relacionados ao imóvel.',
   },
   {
+    id: 'familia-sucessoes',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-6 h-6">
         <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" />
@@ -60,18 +70,22 @@ const areas = [
       </svg>
     ),
     title: 'Família e Sucessões',
-    sub: 'Inventários, divórcio e planejamento.',
+    sub: 'Soluções técnicas e sensíveis para inventários, partilhas e planejamento sucessório, preservando direitos e estabilidade.',
+    full: 'Atuação sensível e técnica na estruturação e resolução de questões familiares e sucessórias, com foco em proteção de direitos, patrimônio e estabilidade. Abrange inventários, partilhas, testamentos, pactos, planejamento sucessório e demandas correlatas, sempre buscando soluções juridicamente seguras.',
   },
   {
+    id: 'ambiental',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-6 h-6">
         <path d="M12 22V12M12 12C12 12 7 9 7 5a5 5 0 0110 0c0 4-5 7-5 7z" />
       </svg>
     ),
     title: 'Direito Ambiental',
-    sub: 'Licenciamento, autos e TAC ambiental.',
+    sub: 'Assessoria preventiva e defesa em procedimentos e autuações ambientais, com foco em conformidade e mitigação de riscos.',
+    full: 'Assessoria preventiva e contenciosa para pessoas físicas e empresas, orientada à conformidade e à mitigação de riscos regulatórios. Abrange licenciamento, autos e sanções administrativas, termos de ajustamento, responsabilidade ambiental e defesa em procedimentos fiscalizatórios.',
   },
   {
+    id: 'consumidor',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-6 h-6">
         <circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" />
@@ -79,16 +93,19 @@ const areas = [
       </svg>
     ),
     title: 'Direito do Consumidor',
-    sub: 'Proteção de direitos e revisão contratual.',
+    sub: 'Prevenção e resolução de conflitos de consumo com estratégia processual, revisão de contratos e proteção reputacional.',
+    full: 'Atuação na prevenção e resolução de conflitos de consumo, com enfoque em estratégia processual e segurança jurídica. Inclui análise de risco, defesa e propositura de demandas, revisão de práticas e contratos, além de suporte em situações com impacto reputacional e financeiro.',
   },
   {
+    id: 'previdenciario',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-6 h-6">
         <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
       </svg>
     ),
     title: 'Direito Previdenciário',
-    sub: 'Aposentadoria, revisões e benefícios INSS.',
+    sub: 'Atuação administrativa e judicial em benefícios e revisões previdenciárias, com análise criteriosa e condução técnica.',
+    full: 'Orientação e atuação em demandas previdenciárias com foco em análise documental, estratégia e segurança do pedido. Abrange requerimentos administrativos e judiciais, revisões, benefícios e questões correlatas, com condução técnica e linguagem clara ao cliente.',
   },
 ];
 
@@ -102,7 +119,7 @@ const diferenciais = [
   'Planejamento estratégico e preventivo',
 ];
 
-/* ─── Blog estático (preview — será dinâmico na próxima fase) ─── */
+/* ─── Blog preview (estático) ─── */
 const blogPosts = [
   {
     slug: 'planejamento-tributario-2025',
@@ -138,14 +155,28 @@ export default function HomePage() {
         className="relative text-white overflow-hidden"
         style={{ minHeight: 'calc(100vh - 72px)' }}
       >
-        {/* Fundo gradiente */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              'linear-gradient(135deg,#07182e 0%,#112845 60%,#1a3d5c 100%)',
-          }}
-        />
+        {/* Fundo fotográfico + gradiente */}
+        <div className="absolute inset-0">
+          <img
+            src="/home-hero.jpg"
+            alt=""
+            className="w-full h-full object-cover object-center"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                'linear-gradient(90deg,rgba(7,24,46,0.97) 0%,rgba(7,24,46,0.90) 50%,rgba(7,24,46,0.55) 100%)',
+            }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                'linear-gradient(to top,rgba(7,24,46,0.80) 0%,transparent 50%)',
+            }}
+          />
+        </div>
         {/* Grid sutil */}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.03]"
@@ -153,17 +184,6 @@ export default function HomePage() {
             backgroundImage:
               'linear-gradient(#E8B84B 1px,transparent 1px),linear-gradient(90deg,#E8B84B 1px,transparent 1px)',
             backgroundSize: '80px 80px',
-          }}
-        />
-        {/* Brilho radial direito */}
-        <div
-          className="absolute pointer-events-none"
-          style={{
-            top: '-80px', right: '-80px',
-            width: '420px', height: '420px',
-            borderRadius: '50%',
-            background:
-              'radial-gradient(circle,rgba(232,184,75,.10) 0%,transparent 70%)',
           }}
         />
 
@@ -230,10 +250,10 @@ export default function HomePage() {
                   Quero uma Consulta
                 </a>
                 <Link
-                  href="/solucoes-juridicas"
+                  href="/areas-de-atuacao"
                   className="inline-flex items-center gap-2 border border-white/20 text-white/85 px-7 py-3.5 rounded-full text-sm font-semibold hover:border-[#E8B84B]/40 hover:text-white transition-all"
                 >
-                  Nossas Soluções
+                  Áreas de Atuação
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
@@ -251,15 +271,14 @@ export default function HomePage() {
                 className="relative w-full max-w-[480px] rounded-3xl overflow-hidden shadow-2xl border border-[#E8B84B]/15"
                 style={{ background: 'linear-gradient(160deg,#1d4170 0%,#19385C 50%,#0f2340 100%)' }}
               >
-                {/* Topo logo */}
-                <div className="px-6 pt-5 pb-4 border-b border-white/10 flex items-center gap-3">
-                  <LogoMM className="h-10 w-10" />
-                  <div className="font-serif text-white leading-tight">
-                    <p className="font-bold text-base">Mauro Monção</p>
-                    <p className="text-[#E8B84B] text-xs tracking-widest font-sans font-normal uppercase">
-                      Advogados Associados
-                    </p>
-                  </div>
+                {/* Topo: Logo oficial */}
+                <div className="px-6 pt-5 pb-4 border-b border-white/10 flex items-center justify-center">
+                  <img
+                    src="/logo-oficial-fundo-branco.png"
+                    alt="Mauro Monção Advogados Associados"
+                    className="h-14 w-auto object-contain"
+                    style={{ filter: 'brightness(0) invert(1) sepia(1) saturate(2) hue-rotate(5deg) brightness(0.82)' }}
+                  />
                 </div>
 
                 {/* Skyline SVG */}
@@ -280,11 +299,9 @@ export default function HomePage() {
                       </linearGradient>
                     </defs>
                     <rect width="500" height="240" fill="url(#hSky)" />
-                    {/* Estrelas */}
                     {[15,45,80,120,160,200,245,285,325,370,410,455].map((x,i)=>(
                       <circle key={i} cx={x} cy={5+(i%8)*6} r={i%4===0?1.3:.7} fill="#E8B84B" opacity={.35+(i%3)*.1}/>
                     ))}
-                    {/* Prédios */}
                     <rect x="0"   y="160" width="40"  height="80"  fill="url(#hGold)" opacity=".4"/>
                     <rect x="45"  y="120" width="50"  height="120" fill="url(#hGold)" opacity=".6"/>
                     <rect x="55"  y="95"  width="30"  height="25"  fill="url(#hGold)" opacity=".6"/>
@@ -329,11 +346,9 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Badge Dr. Ben flutuante */}
+              {/* Badge Dr. Ben */}
               <div className="absolute -bottom-3 -right-2 lg:-right-6 bg-[#0f2340] border border-[#E8B84B]/35 rounded-2xl px-3.5 py-2.5 flex items-center gap-2.5 shadow-2xl">
-                <div className="w-8 h-8 rounded-full bg-[#E8B84B] flex items-center justify-center text-[#19385C] font-black text-[10px] shrink-0">
-                  Dr
-                </div>
+                <div className="w-8 h-8 rounded-full bg-[#E8B84B] flex items-center justify-center text-[#19385C] font-black text-[10px] shrink-0">Dr</div>
                 <div>
                   <p className="text-white text-xs font-bold leading-none">Dr. Ben</p>
                   <p className="text-white/70 text-xs mt-0.5">Assistente 24h</p>
@@ -369,7 +384,7 @@ export default function HomePage() {
       {/* ══════════════════════════════════════
           ÁREAS DE ATUAÇÃO
       ══════════════════════════════════════ */}
-      <section className="py-20 bg-[#f7f5f0]">
+      <section className="py-20 bg-[#f7f5f0]" id="areas">
         <div className="container">
           <div className="text-center mb-12">
             <span className="text-[#E8B84B] text-sm font-bold uppercase tracking-[.2em]">
@@ -385,19 +400,19 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {areas.map(({ icon, title, sub }) => (
+            {areas.map(({ id, icon, title, sub }) => (
               <Link
-                key={title}
-                href="/areas-de-atuacao"
-                className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-[#E8B84B]/40"
+                key={id}
+                href={`/areas-de-atuacao#${id}`}
+                className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-[#E8B84B]/40 flex flex-col"
               >
-                <div className="w-12 h-12 bg-[#19385C] rounded-xl flex items-center justify-center text-[#E8B84B] mb-4 group-hover:bg-[#E8B84B] group-hover:text-[#19385C] transition-colors">
+                <div className="w-12 h-12 bg-[#19385C] rounded-xl flex items-center justify-center text-[#E8B84B] mb-4 group-hover:bg-[#E8B84B] group-hover:text-[#19385C] transition-colors shrink-0">
                   {icon}
                 </div>
                 <h3 className="text-base font-bold text-[#19385C] mb-2 group-hover:text-[#E8B84B] transition-colors font-serif leading-snug">
                   {title}
                 </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{sub}</p>
+                <p className="text-gray-500 text-sm leading-relaxed flex-1">{sub}</p>
                 <span className="inline-flex items-center gap-1 text-[#E8B84B] text-sm font-semibold mt-4">
                   Saiba mais{' '}
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -515,7 +530,6 @@ export default function HomePage() {
                 href={`/blog/${post.slug}`}
                 className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-[#E8B84B]/30 flex flex-col"
               >
-                {/* Thumb placeholder */}
                 <div className="aspect-video bg-[#19385C] flex items-center justify-center">
                   <svg className="w-10 h-10 text-[#E8B84B]/30" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
