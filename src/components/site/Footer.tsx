@@ -113,14 +113,12 @@ export default function Footer() {
                 <div className="space-y-1">
                   <p>
                     <span className="text-[#D4A017] font-semibold">Central 24h: </span>
-                    <a
-                      href={`https://wa.me/${phone}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      href="/contato"
                       className="text-white/90 hover:text-[#D4A017] transition-colors font-medium"
                     >
                       {phoneDrBen}
-                    </a>
+                    </Link>
                   </p>
                   <p><span className="text-[#D4A017] font-semibold">Dr. Mauro:</span> <span className="text-white/80">{phoneDrMauro}</span></p>
                   <p><span className="text-[#D4A017] font-semibold">Escritório:</span> <span className="text-white/80">{phoneOffice}</span></p>
@@ -158,23 +156,19 @@ export default function Footer() {
             <p className="text-white/80 text-[15px] mb-5 leading-relaxed">
               Fale agora com nosso assistente jurídico Dr. Ben. Disponível 24 horas por dia, 7 dias por semana.
             </p>
-            <a
-              href={`https://wa.me/${phone}`}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/contato"
               className="inline-flex items-center gap-3 text-[#0f2340] px-5 py-3 rounded-full text-[14px] font-bold hover:brightness-110 transition-all shadow-lg"
               style={{ background: 'linear-gradient(135deg,#D4A017,#F0C040)', boxShadow: '0 0 16px rgba(212,160,23,0.5)' }}
             >
               <div
-                className="w-8 h-8 rounded-full p-0.5 shrink-0"
-                style={{ background: 'linear-gradient(135deg,#0f2340,#19385C)' }}
+                className="w-8 h-8 rounded-full overflow-hidden border-2 border-[#0f2340]/20 shrink-0"
               >
-                <div className="w-full h-full rounded-full overflow-hidden border border-[#D4A017]/50">
-                  <img src="/dr-ben.jpg" alt="Dr. Ben" className="w-full h-full object-cover object-top" />
-                </div>
+                <img src="/dr-ben.jpg" alt="Dr. Ben" className="w-full h-full object-cover object-top" />
               </div>
               Central de Atendimento 24h
-            </a>
+              <span className="w-2 h-2 rounded-full bg-green-600 shrink-0" />
+            </Link>
           </div>
         </div>
       </div>

@@ -10,36 +10,84 @@
   --brand-gold:       #D4A017;
   --brand-gold-dark:  #B8880E;
   --brand-gold-light: #F0C040;
-  --brand-red:        #b91c1c;
+
+  /* Typography tokens — alinhados com "Advocacia com inovação e compromisso" */
+  --font-serif:  'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+  --font-sans:   'Outfit', 'system-ui', sans-serif;
+  --tracking-wide: 0.06em;
+  --tracking-widest: 0.18em;
 }
 
-/* ─── Tipografia base — tamanhos aumentados ─── */
+/* ─── Base typography ─── */
 html {
-  font-size: 17px;
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Outfit', system-ui, sans-serif;
+  font-family: var(--font-sans);
   color: #1a1a1a;
   -webkit-font-smoothing: antialiased;
-  line-height: 1.65;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.7;
 }
 
-h1, h2, h3 {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  line-height: 1.1;
+/* ─── Heading hierarchy (matching "Advocacia com inovação e compromisso" tone) ─── */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
-/* Textos de parágrafo e labels maiores */
-p, li, span, a {
-  font-size: inherit;
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); }
+h3 { font-size: clamp(1.2rem, 2.5vw, 1.75rem); }
+h4 { font-size: clamp(1rem, 2vw, 1.25rem); }
+
+/* ─── Body text ─── */
+p {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.75;
 }
 
-.text-sm    { font-size: 0.9375rem !important; }   /* 15.9px → era 0.875rem=14px */
-.text-xs    { font-size: 0.8125rem !important; }   /* 13.8px → era 0.75rem=12px  */
-.text-base  { font-size: 1.0625rem !important; }   /* 18px   → era 1rem=16px     */
+/* ─── Uppercase labels / badges — spaced tracking ─── */
+.label-upper {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+}
 
-/* ─── Container customizado ─── */
+/* ─── Buttons global — consistent with brand ─── */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  background: linear-gradient(135deg, #D4A017, #F0C040);
+  color: #0f2340;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.01em;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  box-shadow: 0 0 18px rgba(212,160,23,0.45);
+  transition: filter 0.2s, transform 0.15s;
+}
+.btn-gold:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+/* ─── Font-serif utility class ─── */
+.font-serif {
+  font-family: var(--font-serif) !important;
+}
+
+/* ─── Container ─── */
 .container {
   width: 100%;
   max-width: 1280px;
@@ -51,30 +99,59 @@ p, li, span, a {
 @media (min-width: 640px)  { .container { padding-left: 1.5rem; padding-right: 1.5rem; } }
 @media (min-width: 1024px) { .container { padding-left: 2rem;   padding-right: 2rem; } }
 
-/* ─── Animação pulse para badge ─── */
+/* ─── Animations ─── */
 @keyframes badge-pulse {
   0%, 100% { opacity: 1; }
   50%       { opacity: 0.35; }
 }
 .animate-badge-pulse { animation: badge-pulse 2s infinite; }
 
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* ─── Gold glow utility ─── */
 .gold-glow {
   filter: drop-shadow(0 0 8px rgba(212, 160, 23, 0.5));
 }
 
-/* ─── Dr. Ben button ─── */
+/* ─── Dr. Ben CTA button ─── */
 .dr-ben-btn {
-  background: #b91c1c;
-  border: 2px solid #D4A017;
-  color: white;
+  background: linear-gradient(135deg, #D4A017, #F0C040);
+  color: #0f2340;
   font-weight: 700;
   border-radius: 9999px;
-  box-shadow: 0 0 14px rgba(212,160,23,0.35), 0 3px 10px rgba(185,28,28,0.45);
+  box-shadow: 0 0 16px rgba(212,160,23,0.45);
   transition: all 0.2s;
+  font-family: var(--font-sans);
 }
 .dr-ben-btn:hover {
-  background: #dc2626;
-  border-color: #F0C040;
-  box-shadow: 0 0 20px rgba(212,160,23,0.5), 0 3px 14px rgba(185,28,28,0.5);
+  filter: brightness(1.08);
+  box-shadow: 0 0 24px rgba(212,160,23,0.6);
 }
+
+/* ─── Image rendering — always crisp ─── */
+img {
+  image-rendering: crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* ─── Form inputs global ─── */
+input, textarea, select {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+}
+
+/* ─── Nav links ─── */
+nav a {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* ─── Section spacing consistency ─── */
+section { position: relative; }
+
+/* ─── Responsive image safety ─── */
+img { max-width: 100%; height: auto; }
