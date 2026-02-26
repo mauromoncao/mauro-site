@@ -92,9 +92,11 @@ export default function Header() {
           <img
             src="/logo-oficial-dourado.png"
             alt="Mauro Monção Advogados Associados"
-            className="h-[80px] w-auto object-contain"
+            className="h-[84px] w-auto object-contain"
             style={{
-              filter: 'drop-shadow(0 0 18px rgba(212,160,23,0.75)) drop-shadow(0 0 6px rgba(212,160,23,0.5))',
+              filter: 'drop-shadow(0 0 14px rgba(212,160,23,0.85)) drop-shadow(0 0 4px rgba(240,192,64,0.6))',
+              imageRendering: 'crisp-edges',
+              WebkitFontSmoothing: 'antialiased',
             }}
           />
         </Link>

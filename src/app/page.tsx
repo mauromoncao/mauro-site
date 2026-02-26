@@ -267,85 +267,86 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* ── DIREITA — card visual ── */}
+            {/* ── DIREITA — card visual moderno e elegante ── */}
             <div className="relative order-1 lg:order-2 flex justify-center items-center pb-8 lg:pb-0">
               <div
-                className="relative w-full max-w-[480px] rounded-3xl overflow-hidden shadow-2xl border border-[#D4A017]/15"
-                style={{ background: 'linear-gradient(160deg,#1d4170 0%,#19385C 50%,#0f2340 100%)' }}
+                className="relative w-full max-w-[460px] rounded-3xl overflow-hidden shadow-2xl"
+                style={{
+                  background: 'linear-gradient(160deg,#0d2647 0%,#0f2340 60%,#071828 100%)',
+                  border: '1px solid rgba(212,160,23,0.25)',
+                  boxShadow: '0 0 60px rgba(212,160,23,0.12), 0 24px 60px rgba(0,0,0,0.5)',
+                }}
               >
-                {/* Topo: Logo oficial dourado */}
-                <div className="px-6 pt-5 pb-4 border-b border-[#D4A017]/20 flex items-center justify-center bg-[#0f2340]/60">
+                {/* Faixa dourada superior decorativa */}
+                <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg,transparent,#D4A017,#F0C040,#D4A017,transparent)' }} />
+
+                {/* Topo: Logo + Slogan */}
+                <div className="px-8 pt-6 pb-5 flex flex-col items-center text-center border-b border-[#D4A017]/15">
                   <img
                     src="/logo-oficial-dourado.png"
                     alt="Mauro Monção Advogados Associados"
-                    className="h-16 w-auto object-contain"
-                    style={{ filter: 'drop-shadow(0 0 10px rgba(212,160,23,0.5))' }}
+                    className="h-20 w-auto object-contain mb-3"
+                    style={{ filter: 'drop-shadow(0 0 12px rgba(212,160,23,0.6))', imageRendering: 'crisp-edges' }}
                   />
+                  <p className="text-[#D4A017]/80 text-[11px] font-bold uppercase tracking-[.3em]">
+                    Advocacia Especializada
+                  </p>
                 </div>
 
-                {/* Skyline SVG */}
-                <div className="relative w-full" style={{ paddingBottom: '48%' }}>
-                  <svg viewBox="0 0 500 240" className="absolute inset-0 w-full h-full" fill="none">
-                    <defs>
-                      <linearGradient id="hSky" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="#0b1e35" />
-                        <stop offset="100%" stopColor="#19385C" />
-                      </linearGradient>
-                      <linearGradient id="hGold" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="#D4A017" stopOpacity=".9" />
-                        <stop offset="100%" stopColor="#D4A017" stopOpacity=".2" />
-                      </linearGradient>
-                      <linearGradient id="hFade" x1="0" y1="1" x2="0" y2="0">
-                        <stop offset="0%" stopColor="#0f2340" stopOpacity=".95" />
-                        <stop offset="100%" stopColor="#0f2340" stopOpacity="0" />
-                      </linearGradient>
-                    </defs>
-                    <rect width="500" height="240" fill="url(#hSky)" />
-                    {[15,45,80,120,160,200,245,285,325,370,410,455].map((x,i)=>(
-                      <circle key={i} cx={x} cy={5+(i%8)*6} r={i%4===0?1.3:.7} fill="#D4A017" opacity={.35+(i%3)*.1}/>
-                    ))}
-                    <rect x="0"   y="160" width="40"  height="80"  fill="url(#hGold)" opacity=".4"/>
-                    <rect x="45"  y="120" width="50"  height="120" fill="url(#hGold)" opacity=".6"/>
-                    <rect x="55"  y="95"  width="30"  height="25"  fill="url(#hGold)" opacity=".6"/>
-                    <rect x="62"  y="72"  width="16"  height="23"  fill="url(#hGold)" opacity=".5"/>
-                    <rect x="100" y="140" width="38"  height="100" fill="url(#hGold)" opacity=".4"/>
-                    <rect x="143" y="80"  width="70"  height="160" fill="url(#hGold)" opacity=".9"/>
-                    <rect x="155" y="55"  width="46"  height="25"  fill="url(#hGold)" opacity=".9"/>
-                    <rect x="164" y="32"  width="28"  height="23"  fill="url(#hGold)" opacity=".9"/>
-                    <rect x="170" y="14"  width="16"  height="18"  fill="url(#hGold)" opacity=".9"/>
-                    <rect x="218" y="108" width="52"  height="132" fill="url(#hGold)" opacity=".55"/>
-                    <rect x="229" y="82"  width="30"  height="26"  fill="url(#hGold)" opacity=".55"/>
-                    <rect x="275" y="90"  width="60"  height="150" fill="url(#hGold)" opacity=".65"/>
-                    <rect x="287" y="64"  width="36"  height="26"  fill="url(#hGold)" opacity=".65"/>
-                    <rect x="340" y="118" width="48"  height="122" fill="url(#hGold)" opacity=".45"/>
-                    <rect x="350" y="95"  width="28"  height="23"  fill="url(#hGold)" opacity=".45"/>
-                    <rect x="393" y="138" width="55"  height="102" fill="url(#hGold)" opacity=".35"/>
-                    <rect x="455" y="155" width="45"  height="85"  fill="url(#hGold)" opacity=".3"/>
-                    <rect x="0"   y="235" width="500" height="5"   fill="#D4A017"    opacity=".2"/>
-                    <rect x="0"   y="170" width="500" height="70"  fill="url(#hFade)"/>
-                  </svg>
-                  <div className="absolute bottom-3 left-5 right-5 flex items-end justify-between z-10">
-                    <span className="text-[#D4A017] font-serif text-xs font-semibold tracking-wider">
-                      Advocacia Especializada
-                    </span>
-                    <span className="text-white/60 text-[11px] tracking-widest">CE · PI · MA</span>
-                  </div>
+                {/* Cards de áreas de destaque */}
+                <div className="px-6 py-5 space-y-3">
+                  {[
+                    { icon: '⚖️', label: 'Direito Tributário', desc: 'Recuperação e planejamento fiscal' },
+                    { icon: '🏛️', label: 'Planejamento Patrimonial', desc: 'Proteção e sucessão de patrimônio' },
+                    { icon: '📋', label: 'Advocacia Pública', desc: 'Atuação junto a entes públicos' },
+                  ].map((item) => (
+                    <div
+                      key={item.label}
+                      className="flex items-center gap-4 rounded-2xl px-4 py-3"
+                      style={{ background: 'rgba(212,160,23,0.07)', border: '1px solid rgba(212,160,23,0.12)' }}
+                    >
+                      <span className="text-xl shrink-0">{item.icon}</span>
+                      <div>
+                        <p className="text-white font-semibold text-sm leading-tight">{item.label}</p>
+                        <p className="text-white/50 text-[12px] mt-0.5">{item.desc}</p>
+                      </div>
+                      <svg className="w-4 h-4 text-[#D4A017]/50 ml-auto shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                      </svg>
+                    </div>
+                  ))}
                 </div>
 
-                {/* Stats row */}
-                <div className="grid grid-cols-4 divide-x divide-white/[.08] border-t border-white/[.08]">
+                {/* Stats row — linha de destaque */}
+                <div className="grid grid-cols-4 border-t border-[#D4A017]/15">
                   {[
                     { v: '+15', l: 'Anos' },
                     { v: '500+', l: 'Clientes' },
                     { v: '3', l: 'Estados' },
                     { v: '24h', l: 'Online' },
-                  ].map((s) => (
-                    <div key={s.l} className="py-4 text-center">
-                      <p className="text-[#D4A017] font-bold text-lg font-serif leading-none">{s.v}</p>
-                      <p className="text-white/70 text-xs mt-1 uppercase tracking-wider">{s.l}</p>
+                  ].map((s, i) => (
+                    <div
+                      key={s.l}
+                      className={`py-4 text-center ${i < 3 ? 'border-r border-[#D4A017]/10' : ''}`}
+                    >
+                      <p className="text-[#D4A017] font-black text-lg font-serif leading-none">{s.v}</p>
+                      <p className="text-white/55 text-[10px] mt-1 uppercase tracking-wider">{s.l}</p>
                     </div>
                   ))}
                 </div>
+
+                {/* Sedes */}
+                <div className="px-6 py-3 border-t border-[#D4A017]/10 flex items-center justify-center gap-6">
+                  {['PI – Parnaíba', 'CE – Fortaleza'].map((loc) => (
+                    <div key={loc} className="flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017] shrink-0" />
+                      <span className="text-white/60 text-[12px] font-medium">{loc}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Faixa dourada inferior */}
+                <div className="h-0.5 w-full" style={{ background: 'linear-gradient(90deg,transparent,#D4A017,#F0C040,#D4A017,transparent)' }} />
               </div>
 
               {/* Badge Dr. Ben — DOURADO + foto */}

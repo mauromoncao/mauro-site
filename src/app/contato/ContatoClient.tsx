@@ -195,29 +195,19 @@ export default function ContatoClient() {
           </div>
 
           <div className="flex flex-col gap-5 max-w-3xl mx-auto">
-            {/* Card Dr. Ben — principal, destaque */}
+            {/* Card Dr. Ben — único canal WA principal */}
             <WhatsAppCard
               photo="/dr-ben.jpg"
               name="Dr. Ben"
-              role="Assistente Virtual"
+              role="Assistente Virtual · Central 24h"
               phone={phoneDrBen}
               waUrl={waUrlDrBen}
               isMain={true}
             />
-
-            {/* Card Dr. Mauro — secundário */}
-            <WhatsAppCard
-              photo="/dr-mauro.jpg"
-              name="Dr. Mauro Monção"
-              role="Fundador & Diretor"
-              phone={phoneDrMauro}
-              waUrl={waUrlDrMauro}
-              isMain={false}
-            />
           </div>
 
-          {/* Linha de contatos rápidos */}
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+          {/* Contatos adicionais — SEM link WA nos demais */}
+          <div className="mt-6 max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="bg-[#19385C] rounded-2xl p-4 flex items-center gap-3 border border-[#D4A017]/20">
               <div className="w-10 h-10 rounded-full bg-[#D4A017]/15 border border-[#D4A017]/30 flex items-center justify-center shrink-0">
                 <svg className="w-5 h-5 text-[#D4A017]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -225,8 +215,8 @@ export default function ContatoClient() {
                 </svg>
               </div>
               <div>
-                <p className="text-[#D4A017] text-[11px] font-bold uppercase tracking-wide">Escritório</p>
-                <p className="text-white text-[14px] font-medium">{phoneOffice}</p>
+                <p className="text-[#D4A017] text-[11px] font-bold uppercase tracking-wide">Dr. Mauro Monção</p>
+                <p className="text-white text-[14px] font-medium">{phoneDrMauro}</p>
               </div>
             </div>
             <div className="bg-[#19385C] rounded-2xl p-4 flex items-center gap-3 border border-[#D4A017]/20">
@@ -254,34 +244,36 @@ export default function ContatoClient() {
               </div>
             </div>
           </div>
+
+
         </div>
       </section>
 
       {/* ══ FORMULÁRIO + ESCRITÓRIOS ══ */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-[#07182e]">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
 
             {/* ── FORMULÁRIO ── */}
-            <div>
+            <div className="bg-[#0f2340] rounded-3xl p-8 border border-[#D4A017]/20 shadow-2xl">
               <span className="text-[#D4A017] text-sm font-bold uppercase tracking-[.2em]">Formulário</span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#19385C] mt-2 mb-2 font-serif">
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mt-2 mb-2 font-serif">
                 Envie sua mensagem
               </h2>
-              <p className="text-gray-500 mb-8 text-[15px] leading-relaxed">
+              <p className="text-white/65 mb-8 text-[15px] leading-relaxed">
                 Preencha os campos abaixo. Seu contato será encaminhado via
                 WhatsApp diretamente para nossa equipe.
               </p>
 
               {enviado ? (
-                <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <div className="bg-green-900/30 border border-green-500/30 rounded-2xl p-8 text-center">
+                  <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-green-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <polyline points="20 6 9 17 4 12"/>
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-[#19385C] font-serif mb-2">Mensagem enviada!</h3>
-                  <p className="text-gray-500 text-[15px]">Você foi redirecionado para o WhatsApp. Responderemos em breve.</p>
+                  <h3 className="text-xl font-bold text-white font-serif mb-2">Mensagem enviada!</h3>
+                  <p className="text-white/65 text-[15px]">Você foi redirecionado para o WhatsApp. Responderemos em breve.</p>
                   <button
                     onClick={() => { setEnviado(false); setForm({ nome:'', email:'', telefone:'', area:'', mensagem:'' }); }}
                     className="mt-6 text-[#D4A017] font-semibold hover:underline text-sm"
@@ -292,44 +284,48 @@ export default function ContatoClient() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
-                    <label className="block text-sm font-semibold text-[#19385C] mb-1.5">
-                      Nome completo <span className="text-red-500">*</span>
+                    <label className="block text-sm font-semibold text-white/90 mb-1.5">
+                      Nome completo <span className="text-[#D4A017]">*</span>
                     </label>
                     <input
                       type="text" name="nome" value={form.nome} onChange={handleChange} required
                       placeholder="Seu nome completo"
-                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-[15px] text-gray-800 focus:outline-none focus:border-[#D4A017] focus:ring-2 focus:ring-[#D4A017]/20 transition-all bg-gray-50 placeholder:text-gray-400"
+                      className="w-full border border-white/10 rounded-xl px-4 py-3 text-[15px] text-white focus:outline-none focus:border-[#D4A017] focus:ring-2 focus:ring-[#D4A017]/20 transition-all bg-white/8 placeholder:text-white/30"
+                      style={{ background: 'rgba(255,255,255,0.06)' }}
                     />
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-sm font-semibold text-[#19385C] mb-1.5">
-                        E-mail <span className="text-red-500">*</span>
+                      <label className="block text-sm font-semibold text-white/90 mb-1.5">
+                        E-mail <span className="text-[#D4A017]">*</span>
                       </label>
                       <input
                         type="email" name="email" value={form.email} onChange={handleChange} required
                         placeholder="seu@email.com"
-                        className="w-full border border-gray-200 rounded-xl px-4 py-3 text-[15px] text-gray-800 focus:outline-none focus:border-[#D4A017] focus:ring-2 focus:ring-[#D4A017]/20 transition-all bg-gray-50 placeholder:text-gray-400"
+                        className="w-full border border-white/10 rounded-xl px-4 py-3 text-[15px] text-white focus:outline-none focus:border-[#D4A017] focus:ring-2 focus:ring-[#D4A017]/20 transition-all placeholder:text-white/30"
+                        style={{ background: 'rgba(255,255,255,0.06)' }}
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-[#19385C] mb-1.5">
-                        WhatsApp / Telefone <span className="text-red-500">*</span>
+                      <label className="block text-sm font-semibold text-white/90 mb-1.5">
+                        WhatsApp / Telefone <span className="text-[#D4A017]">*</span>
                       </label>
                       <input
                         type="tel" name="telefone" value={form.telefone} onChange={handleChange} required
                         placeholder="(86) 99999-0000"
-                        className="w-full border border-gray-200 rounded-xl px-4 py-3 text-[15px] text-gray-800 focus:outline-none focus:border-[#D4A017] focus:ring-2 focus:ring-[#D4A017]/20 transition-all bg-gray-50 placeholder:text-gray-400"
+                        className="w-full border border-white/10 rounded-xl px-4 py-3 text-[15px] text-white focus:outline-none focus:border-[#D4A017] focus:ring-2 focus:ring-[#D4A017]/20 transition-all placeholder:text-white/30"
+                        style={{ background: 'rgba(255,255,255,0.06)' }}
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-[#19385C] mb-1.5">Área de interesse</label>
+                    <label className="block text-sm font-semibold text-white/90 mb-1.5">Área de interesse</label>
                     <select
                       name="area" value={form.area} onChange={handleChange}
-                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-[15px] text-gray-800 focus:outline-none focus:border-[#D4A017] focus:ring-2 focus:ring-[#D4A017]/20 transition-all bg-gray-50"
+                      className="w-full border border-white/10 rounded-xl px-4 py-3 text-[15px] text-white focus:outline-none focus:border-[#D4A017] focus:ring-2 focus:ring-[#D4A017]/20 transition-all"
+                      style={{ background: 'rgba(15,35,64,0.95)' }}
                     >
                       <option value="">Selecione uma área</option>
                       {areas.map((a) => <option key={a} value={a}>{a}</option>)}
@@ -337,17 +333,18 @@ export default function ContatoClient() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-[#19385C] mb-1.5">
-                      Descreva brevemente sua situação <span className="text-red-500">*</span>
+                    <label className="block text-sm font-semibold text-white/90 mb-1.5">
+                      Descreva brevemente sua situação <span className="text-[#D4A017]">*</span>
                     </label>
                     <textarea
                       name="mensagem" value={form.mensagem} onChange={handleChange} required rows={5}
                       placeholder="Conte-nos sobre seu caso ou dúvida jurídica..."
-                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-[15px] text-gray-800 focus:outline-none focus:border-[#D4A017] focus:ring-2 focus:ring-[#D4A017]/20 transition-all bg-gray-50 placeholder:text-gray-400 resize-none"
+                      className="w-full border border-white/10 rounded-xl px-4 py-3 text-[15px] text-white focus:outline-none focus:border-[#D4A017] focus:ring-2 focus:ring-[#D4A017]/20 transition-all placeholder:text-white/30 resize-none"
+                      style={{ background: 'rgba(255,255,255,0.06)' }}
                     />
                   </div>
 
-                  <p className="text-[13px] text-gray-400">
+                  <p className="text-[13px] text-white/40">
                     🔒 Suas informações são confidenciais e protegidas pelo sigilo profissional.
                   </p>
 
@@ -443,21 +440,7 @@ export default function ContatoClient() {
         </div>
       </section>
 
-      {/* ══ CTA FINAL ══ */}
-      <section className="py-16 bg-[#07182e]">
-        <div className="container">
-          <div className="max-w-3xl mx-auto">
-            <WhatsAppCard
-              photo="/dr-ben.jpg"
-              name="Dr. Ben"
-              role="Assistente Virtual · 24h"
-              phone={phoneDrBen}
-              waUrl={waUrlDrBen}
-              isMain={true}
-            />
-          </div>
-        </div>
-      </section>
+
     </>
   );
 }
