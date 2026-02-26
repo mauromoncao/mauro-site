@@ -90,7 +90,7 @@ export default function Header() {
         {/* ── LOGO OFICIAL DOURADO — DESTAQUE MÁXIMO ── */}
         <Link href="/" className="flex items-center shrink-0">
           <img
-            src="/logo-final.png"
+            src="/logo-transparent.png"
             alt="Mauro Monção Advogados Associados"
             className="h-[72px] w-auto"
             style={{ imageRendering: 'crisp-edges' }}

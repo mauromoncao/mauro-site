@@ -295,7 +295,7 @@ export default function HomePage() {
                   {/* Apenas logo centralizada sobre a imagem */}
                   <div className="absolute inset-0 flex items-center justify-center z-10">
                     <img
-                      src="/logo-final.png"
+                      src="/logo-transparent.png"
                       alt="Mauro Monção"
                       className="h-16 w-auto"
                       style={{ imageRendering: 'crisp-edges' }}

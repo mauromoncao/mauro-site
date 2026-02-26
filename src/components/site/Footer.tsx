@@ -41,7 +41,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="mb-6">
               <img
-                src="/logo-final.png"
+                src="/logo-transparent.png"
                 alt="Mauro Monção Advogados Associados"
                 className="h-20 w-auto"
                 style={{ imageRendering: 'crisp-edges' }}
