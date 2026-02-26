@@ -7,21 +7,37 @@
   --brand-blue:       #19385C;
   --brand-blue-dark:  #0f2340;
   --brand-blue-deep:  #07182e;
-  --brand-gold:       #E8B84B;
-  --brand-gold-dark:  #c99a2e;
-  --brand-gold-light: #F0CB6E;
+  --brand-gold:       #D4A017;
+  --brand-gold-dark:  #B8880E;
+  --brand-gold-light: #F0C040;
+  --brand-red:        #b91c1c;
 }
 
-/* ─── Tipografia base ─── */
+/* ─── Tipografia base — tamanhos aumentados ─── */
+html {
+  font-size: 17px;
+}
+
 body {
   font-family: 'Outfit', system-ui, sans-serif;
   color: #1a1a1a;
   -webkit-font-smoothing: antialiased;
+  line-height: 1.65;
 }
 
 h1, h2, h3 {
   font-family: 'Cormorant Garamond', Georgia, serif;
+  line-height: 1.1;
 }
+
+/* Textos de parágrafo e labels maiores */
+p, li, span, a {
+  font-size: inherit;
+}
+
+.text-sm    { font-size: 0.9375rem !important; }   /* 15.9px → era 0.875rem=14px */
+.text-xs    { font-size: 0.8125rem !important; }   /* 13.8px → era 0.75rem=12px  */
+.text-base  { font-size: 1.0625rem !important; }   /* 18px   → era 1rem=16px     */
 
 /* ─── Container customizado ─── */
 .container {
@@ -41,3 +57,24 @@ h1, h2, h3 {
   50%       { opacity: 0.35; }
 }
 .animate-badge-pulse { animation: badge-pulse 2s infinite; }
+
+/* ─── Gold glow utility ─── */
+.gold-glow {
+  filter: drop-shadow(0 0 8px rgba(212, 160, 23, 0.5));
+}
+
+/* ─── Dr. Ben button ─── */
+.dr-ben-btn {
+  background: #b91c1c;
+  border: 2px solid #D4A017;
+  color: white;
+  font-weight: 700;
+  border-radius: 9999px;
+  box-shadow: 0 0 14px rgba(212,160,23,0.35), 0 3px 10px rgba(185,28,28,0.45);
+  transition: all 0.2s;
+}
+.dr-ben-btn:hover {
+  background: #dc2626;
+  border-color: #F0C040;
+  box-shadow: 0 0 20px rgba(212,160,23,0.5), 0 3px 14px rgba(185,28,28,0.5);
+}

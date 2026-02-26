@@ -33,25 +33,25 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#19385C] text-white border-t border-white/5">
-      <div className="container py-14">
+    <footer className="bg-[#19385C] text-white border-t-2 border-[#D4A017]/40">
+      <div className="container py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
           {/* ── Marca ── */}
           <div className="lg:col-span-1">
-            <div className="mb-5">
+            <div className="mb-6">
               <img
-                src="/logo-oficial-fundo-branco.png"
+                src="/logo-oficial-dourado.png"
                 alt="Mauro Monção Advogados Associados"
-                className="h-16 w-auto object-contain"
-                style={{ filter: 'brightness(0) invert(1) sepia(1) saturate(2) hue-rotate(5deg) brightness(0.82)' }}
+                className="h-20 w-auto object-contain"
+                style={{ filter: 'drop-shadow(0 0 8px rgba(212,160,23,0.4))' }}
               />
             </div>
-            <p className="text-white/75 text-sm leading-relaxed">
+            <p className="text-white/80 text-[15px] leading-relaxed">
               Mais de 15 anos de dedicação à prática jurídica, atuando nos Estados
               do Ceará, Piauí e Maranhão.
             </p>
-            <div className="flex gap-3 mt-5">
+            <div className="flex gap-3 mt-6">
               {socialLinks.map((s) => (
                 <a
                   key={s.label}
@@ -59,7 +59,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   title={s.label}
-                  className="w-9 h-9 rounded-full bg-[#E8B84B]/15 border border-[#E8B84B]/50 flex items-center justify-center text-[#E8B84B] hover:bg-[#E8B84B]/30 hover:border-[#E8B84B] hover:scale-110 transition-all"
+                  className="w-10 h-10 rounded-full bg-[#D4A017]/15 border border-[#D4A017]/50 flex items-center justify-center text-[#D4A017] hover:bg-[#D4A017]/30 hover:border-[#D4A017] hover:scale-110 transition-all"
                 >
                   {s.icon}
                 </a>
@@ -69,10 +69,10 @@ export default function Footer() {
 
           {/* ── Links Rápidos ── */}
           <div>
-            <h4 className="font-semibold text-[#E8B84B] mb-5 text-sm uppercase tracking-wider">
+            <h4 className="font-bold text-[#D4A017] mb-5 text-[15px] uppercase tracking-wider">
               Links Rápidos
             </h4>
-            <nav className="flex flex-col gap-2.5">
+            <nav className="flex flex-col gap-3">
               {[
                 { href: '/',                    label: 'Início' },
                 { href: '/sobre',               label: 'Sobre Nós' },
@@ -82,81 +82,82 @@ export default function Footer() {
                 { href: '/faq',                 label: 'FAQ' },
                 { href: '/contato',             label: 'Contato' },
               ].map((l) => (
-                <Link
+                <a
                   key={l.href}
                   href={l.href}
-                  className="text-white/75 hover:text-[#E8B84B] text-sm transition-colors flex items-center gap-1 group"
+                  className="text-white/80 hover:text-[#D4A017] text-[15px] transition-colors flex items-center gap-1.5 group"
                 >
                   <svg
-                    className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity -ml-1"
+                    className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity -ml-1 shrink-0"
                     fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"
                   >
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                   {l.label}
-                </Link>
+                </a>
               ))}
             </nav>
           </div>
 
           {/* ── Contato ── */}
           <div>
-            <h4 className="font-semibold text-[#E8B84B] mb-5 text-sm uppercase tracking-wider">
+            <h4 className="font-bold text-[#D4A017] mb-5 text-[15px] uppercase tracking-wider">
               Contato
             </h4>
-            <div className="flex flex-col gap-4 text-sm text-white/75">
+            <div className="flex flex-col gap-4 text-[15px] text-white/80">
 
-              <div className="flex items-start gap-2.5">
-                <svg className="w-4 h-4 text-[#E8B84B] mt-0.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <div className="flex items-start gap-3">
+                <svg className="w-5 h-5 text-[#D4A017] mt-0.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.72 9.72a19.79 19.79 0 01-3.07-8.67A2 2 0 012.48 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006.35 6.35l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
                 </svg>
-                <div>
-                  <p><span className="text-[#E8B84B] font-medium">Dr. Ben 24h:</span> {phoneDrBen}</p>
-                  <p><span className="text-[#E8B84B] font-medium">Dr. Mauro:</span> {phoneDrMauro}</p>
-                  <p><span className="text-[#E8B84B] font-medium">Escritório:</span> {phoneOffice}</p>
+                <div className="space-y-1">
+                  <p><span className="text-[#D4A017] font-semibold">Dr. Ben 24h:</span> {phoneDrBen}</p>
+                  <p><span className="text-[#D4A017] font-semibold">Dr. Mauro:</span> {phoneDrMauro}</p>
+                  <p><span className="text-[#D4A017] font-semibold">Escritório:</span> {phoneOffice}</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-2.5">
-                <svg className="w-4 h-4 text-[#E8B84B] shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <div className="flex items-center gap-3">
+                <svg className="w-5 h-5 text-[#D4A017] shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                   <polyline points="22,6 12,13 2,6"/>
                 </svg>
-                <a href={`mailto:${email}`} className="hover:text-[#E8B84B] transition-colors">
+                <a href={`mailto:${email}`} className="hover:text-[#D4A017] transition-colors">
                   {email}
                 </a>
               </div>
 
-              <div className="flex items-start gap-2.5">
-                <svg className="w-4 h-4 text-[#E8B84B] mt-0.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <div className="flex items-start gap-3">
+                <svg className="w-5 h-5 text-[#D4A017] mt-0.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
                   <circle cx="12" cy="10" r="3"/>
                 </svg>
-                <div>
-                  <p><span className="text-[#E8B84B] font-medium">PI:</span> Parnaíba – Bairro São Benedito</p>
-                  <p><span className="text-[#E8B84B] font-medium">CE:</span> Fortaleza – Aldeota</p>
+                <div className="space-y-1">
+                  <p><span className="text-[#D4A017] font-semibold">PI:</span> Parnaíba</p>
+                  <p><span className="text-[#D4A017] font-semibold">CE:</span> Fortaleza</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* ── CTA 24h ── */}
+          {/* ── CTA 24h com Dr. Ben ── */}
           <div>
-            <h4 className="font-semibold text-[#E8B84B] mb-5 text-sm uppercase tracking-wider">
+            <h4 className="font-bold text-[#D4A017] mb-5 text-[15px] uppercase tracking-wider">
               Atendimento 24h
             </h4>
-            <p className="text-white/75 text-sm mb-5 leading-relaxed">
+            <p className="text-white/80 text-[15px] mb-5 leading-relaxed">
               Fale agora com nosso assistente jurídico Dr. Ben. Disponível 24 horas por dia, 7 dias por semana.
             </p>
             <a
               href={`https://wa.me/${phone}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#E8B84B] text-[#19385C] px-5 py-2.5 rounded-full text-sm font-bold hover:brightness-110 transition-all"
+              className="inline-flex items-center gap-3 bg-red-700 border-2 border-[#D4A017] text-white px-5 py-3 rounded-full text-[14px] font-bold hover:bg-red-600 transition-all shadow-lg"
+              style={{ boxShadow: '0 0 12px rgba(212,160,23,0.3)' }}
             >
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.387 0-4.594-.838-6.324-2.236l-.442-.37-3.063 1.027 1.027-3.063-.37-.442A9.96 9.96 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
-              </svg>
+              <div className="w-8 h-8 rounded-full overflow-hidden border border-[#D4A017]/80 shrink-0">
+                <img src="/dr-ben.jpg" alt="Dr. Ben" className="w-full h-full object-cover object-top" />
+              </div>
               Falar com Dr. Ben
             </a>
           </div>
@@ -164,19 +165,19 @@ export default function Footer() {
       </div>
 
       {/* ── Bottom bar ── */}
-      <div className="border-t border-white/5">
-        <div className="container py-4 flex flex-col sm:flex-row justify-between items-center text-xs text-white/50 gap-2">
+      <div className="border-t border-[#D4A017]/20">
+        <div className="container py-5 flex flex-col sm:flex-row justify-between items-center text-[13px] text-white/55 gap-2">
           <p>
-            &copy; {year} Mauro Monção Advogados Associados · OAB/PI 22.291 · Todos os direitos reservados.
+            &copy; {year} Mauro Monção Advogados Associados · Todos os direitos reservados.
           </p>
           <div className="flex items-center gap-4">
-            <Link href="/politica-de-privacidade" className="hover:text-[#E8B84B] transition-colors">
+            <a href="/politica-de-privacidade" className="hover:text-[#D4A017] transition-colors">
               Política de Privacidade
-            </Link>
+            </a>
             <span className="opacity-30">|</span>
-            <Link href="/termos-de-uso" className="hover:text-[#E8B84B] transition-colors">
+            <a href="/termos-de-uso" className="hover:text-[#D4A017] transition-colors">
               Termos de Uso
-            </Link>
+            </a>
           </div>
         </div>
       </div>

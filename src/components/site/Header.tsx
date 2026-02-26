@@ -75,8 +75,8 @@ export default function Header() {
   const navLink = (href: string, label: string) => (
     <Link
       href={href}
-      className={`text-sm font-medium transition-colors hover:text-[#E8B84B] whitespace-nowrap ${
-        pathname === href ? 'text-[#E8B84B]' : 'text-white/85'
+      className={`text-[15px] font-semibold transition-colors hover:text-[#D4A017] whitespace-nowrap ${
+        pathname === href ? 'text-[#D4A017]' : 'text-white/90'
       }`}
     >
       {label}
@@ -84,16 +84,16 @@ export default function Header() {
   );
 
   return (
-    <header className="bg-[#19385C] sticky top-0 z-50 shadow-lg">
-      <div className="container flex items-center justify-between h-[72px] gap-4">
+    <header className="bg-[#19385C] sticky top-0 z-50 shadow-lg border-b border-[#D4A017]/20">
+      <div className="container flex items-center justify-between h-[76px] gap-4">
 
-        {/* ── LOGO ── */}
+        {/* ── LOGO OFICIAL DOURADO ── */}
         <Link href="/" className="flex items-center shrink-0">
           <img
-            src="/logo-oficial-fundo-branco.png"
+            src="/logo-oficial-dourado.png"
             alt="Mauro Monção Advogados Associados"
-            className="h-12 w-auto object-contain"
-            style={{ filter: 'brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(5deg) brightness(0.85)' }}
+            className="h-14 w-auto object-contain"
+            style={{ filter: 'drop-shadow(0 0 8px rgba(212,160,23,0.45))' }}
           />
         </Link>
 
@@ -107,8 +107,8 @@ export default function Header() {
             <button
               onMouseEnter={() => setAreasOpen(true)}
               onClick={() => setAreasOpen(!areasOpen)}
-              className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-[#E8B84B] whitespace-nowrap ${
-                pathname?.startsWith('/areas-de-atuacao') ? 'text-[#E8B84B]' : 'text-white/85'
+              className={`flex items-center gap-1 text-[15px] font-semibold transition-colors hover:text-[#D4A017] whitespace-nowrap ${
+                pathname?.startsWith('/areas-de-atuacao') ? 'text-[#D4A017]' : 'text-white/90'
               }`}
             >
               Áreas de Atuação
@@ -122,7 +122,7 @@ export default function Header() {
 
             {areasOpen && (
               <div
-                className="absolute top-full left-0 mt-2 w-64 bg-[#19385C] border border-[#E8B84B]/20 rounded-xl shadow-2xl py-2 z-50"
+                className="absolute top-full left-0 mt-2 w-64 bg-[#19385C] border border-[#D4A017]/30 rounded-xl shadow-2xl py-2 z-50"
                 onMouseLeave={() => setAreasOpen(false)}
               >
                 {areasDropdown.map((item, idx) => (
@@ -130,12 +130,12 @@ export default function Header() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setAreasOpen(false)}
-                    className={`block px-4 py-2.5 text-sm transition-colors hover:bg-white/5 hover:text-[#E8B84B] ${
+                    className={`block px-4 py-2.5 text-[14px] transition-colors hover:bg-white/5 hover:text-[#D4A017] ${
                       idx === 0
-                        ? 'text-[#E8B84B] font-bold border-b border-white/10 mb-1 text-xs uppercase tracking-wider'
+                        ? 'text-[#D4A017] font-bold border-b border-white/10 mb-1 text-xs uppercase tracking-wider'
                         : pathname === item.href
-                        ? 'text-[#E8B84B] font-medium'
-                        : 'text-white/75'
+                        ? 'text-[#D4A017] font-semibold'
+                        : 'text-white/80'
                     }`}
                   >
                     {idx === 0 ? `${item.label} →` : item.label}
@@ -151,16 +151,17 @@ export default function Header() {
           {navLink('/faq', 'FAQ')}
           {navLink('/contato', 'Contato')}
 
-          {/* Dr. Ben badge */}
+          {/* ── Dr. Ben badge — VERMELHO com borda DOURADA ── */}
           <a
             href="/assistente-juridico"
-            className="flex items-center gap-1.5 bg-[#19385C] border border-[#E8B84B]/40 text-[#E8B84B] px-3 py-1.5 rounded-full text-xs font-bold hover:border-[#E8B84B] transition-all whitespace-nowrap shadow"
+            className="flex items-center gap-2 bg-red-700 border-2 border-[#D4A017] text-white px-3.5 py-2 rounded-full text-[13px] font-bold hover:bg-red-600 hover:border-[#F0C040] transition-all whitespace-nowrap shadow-lg shadow-red-900/30"
+            style={{ boxShadow: '0 0 12px rgba(212,160,23,0.35), 0 2px 8px rgba(185,28,28,0.4)' }}
           >
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/>
-            </svg>
-            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-            Dr. Ben
+            <div className="w-6 h-6 rounded-full overflow-hidden border border-[#D4A017]/80 shrink-0">
+              <img src="/dr-ben.jpg" alt="Dr. Ben" className="w-full h-full object-cover object-top" />
+            </div>
+            <span>Dr. Ben</span>
+            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse shrink-0" />
           </a>
 
           {/* Tributoflix */}
@@ -168,7 +169,7 @@ export default function Header() {
             href="https://tributoflix.com.br"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 bg-red-700 text-white px-3 py-1.5 rounded text-xs font-black hover:bg-red-600 transition-colors whitespace-nowrap tracking-wide"
+            className="flex items-center gap-1 bg-red-700 text-white px-3 py-2 rounded text-[13px] font-black hover:bg-red-600 transition-colors whitespace-nowrap tracking-wide"
           >
             ▶ TRIBUTOFLIX
           </a>
@@ -178,13 +179,13 @@ export default function Header() {
             href={`https://wa.me/${phone}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#E8B84B] text-[#19385C] px-4 py-2 rounded-full text-sm font-bold hover:brightness-110 transition-all whitespace-nowrap shadow-md"
+            className="bg-[#D4A017] text-[#19385C] px-5 py-2.5 rounded-full text-[14px] font-bold hover:brightness-110 transition-all whitespace-nowrap shadow-md"
           >
             Fale Conosco
           </a>
 
           {/* Sociais */}
-          <div className="flex items-center gap-2.5 border-l border-[#E8B84B]/20 pl-3">
+          <div className="flex items-center gap-2.5 border-l border-[#D4A017]/30 pl-3">
             {socialLinks.map((s) => (
               <a
                 key={s.label}
@@ -192,7 +193,7 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title={s.label}
-                className="text-[#E8B84B] hover:text-[#F0CB6E] hover:scale-110 transition-all"
+                className="text-[#D4A017] hover:text-[#F0C040] hover:scale-110 transition-all"
               >
                 {s.icon}
               </a>
@@ -202,7 +203,7 @@ export default function Header() {
 
         {/* ── MOBILE TOGGLE ── */}
         <button
-          className="xl:hidden p-2 text-[#E8B84B]"
+          className="xl:hidden p-2 text-[#D4A017]"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menu"
         >
@@ -220,7 +221,7 @@ export default function Header() {
 
       {/* ── MOBILE NAV ── */}
       {mobileOpen && (
-        <div className="xl:hidden bg-[#19385C] border-t border-[#E8B84B]/20 px-4 pb-6">
+        <div className="xl:hidden bg-[#19385C] border-t border-[#D4A017]/20 px-4 pb-6">
           <div className="flex flex-col gap-0.5 pt-3">
             {[
               { href: '/',                    label: 'Início' },
@@ -230,22 +231,34 @@ export default function Header() {
               { href: '/blog',                label: 'Blog' },
               { href: '/faq',                 label: 'FAQ' },
               { href: '/contato',             label: 'Contato' },
-              { href: '/assistente-juridico', label: '🤖 Dr. Ben — Assistente IA' },
             ].map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
                 onClick={() => setMobileOpen(false)}
-                className="py-3 border-b border-white/10 text-white/85 text-sm font-medium hover:text-[#E8B84B] transition-colors"
+                className="py-3.5 border-b border-white/10 text-white/90 text-[16px] font-semibold hover:text-[#D4A017] transition-colors"
               >
                 {l.label}
               </Link>
             ))}
+
+            {/* Dr. Ben mobile — vermelho + dourado */}
+            <a
+              href="/assistente-juridico"
+              className="mt-4 flex items-center justify-center gap-3 bg-red-700 border-2 border-[#D4A017] text-white py-3.5 rounded-full text-[15px] font-bold"
+            >
+              <div className="w-7 h-7 rounded-full overflow-hidden border border-[#D4A017]/80">
+                <img src="/dr-ben.jpg" alt="Dr. Ben" className="w-full h-full object-cover object-top" />
+              </div>
+              Dr. Ben — Assistente IA
+              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+            </a>
+
             <a
               href={`https://wa.me/${phone}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 bg-[#E8B84B] text-[#19385C] text-center px-4 py-3 rounded-full text-sm font-bold"
+              className="mt-2 bg-[#D4A017] text-[#19385C] text-center px-4 py-3.5 rounded-full text-[15px] font-bold"
             >
               Fale Conosco
             </a>
@@ -253,14 +266,14 @@ export default function Header() {
               href="https://tributoflix.com.br"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 bg-red-700 text-white text-center px-4 py-3 rounded text-sm font-black"
+              className="mt-2 bg-red-700 text-white text-center px-4 py-3 rounded text-[14px] font-black"
             >
               ▶ TRIBUTOFLIX
             </a>
-            <div className="flex items-center justify-center gap-5 mt-4">
+            <div className="flex items-center justify-center gap-5 mt-5">
               {socialLinks.map((s) => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
-                  className="text-[#E8B84B]">
+                  className="text-[#D4A017]">
                   {s.icon}
                 </a>
               ))}

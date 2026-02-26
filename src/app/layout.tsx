@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     locale: 'pt_BR',
     url: 'https://mauromoncao.adv.br',
     siteName: 'Mauro Monção Advogados Associados',
-    images: [{ url: '/logo-brand.png', width: 1200, height: 630 }],
+    images: [{ url: '/logo-oficial-dourado.png', width: 1200, height: 630 }],
   },
   icons: {
     icon: [
