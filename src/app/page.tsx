@@ -282,7 +282,7 @@ export default function HomePage() {
                 {/* Imagem de fundo — escritório moderno */}
                 <div className="relative" style={{ aspectRatio: '4/3' }}>
                   <img
-                    src="/hero-card-modern.jpg"
+                    src="/hero-card-office.jpg"
                     alt="Advocacia Especializada"
                     className="absolute inset-0 w-full h-full object-cover"
                   />
