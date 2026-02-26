@@ -261,8 +261,8 @@ export default function SobrePage() {
                 href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 mt-8 text-white px-7 py-3.5 rounded-full text-sm font-bold transition-all"
-                style={{ background: '#b91c1c', border: '2px solid #D4A017', boxShadow: '0 0 12px rgba(212,160,23,0.3)' }}
+                className="inline-flex items-center gap-2.5 mt-8 text-[#19385C] px-7 py-3.5 rounded-full text-sm font-bold hover:brightness-110 transition-all shadow-lg"
+                style={{ background: '#D4A017', boxShadow: '0 0 12px rgba(212,160,23,0.35)' }}
               >
                 <div className="w-6 h-6 rounded-full overflow-hidden border border-[#D4A017]/80 shrink-0">
                   <img src="/dr-ben.jpg" alt="Dr. Ben" className="w-full h-full object-cover object-top" />
@@ -362,8 +362,8 @@ export default function SobrePage() {
               href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 text-white px-7 py-3.5 rounded-full text-sm font-bold transition-all"
-              style={{ background: '#b91c1c', border: '2px solid #D4A017', boxShadow: '0 0 12px rgba(212,160,23,0.3)' }}
+              className="inline-flex items-center gap-2.5 text-[#19385C] px-7 py-3.5 rounded-full text-sm font-bold hover:brightness-110 transition-all shadow-lg"
+              style={{ background: '#D4A017', boxShadow: '0 0 12px rgba(212,160,23,0.35)' }}
             >
               <div className="w-6 h-6 rounded-full overflow-hidden border border-[#D4A017]/80 shrink-0">
                 <img src="/dr-ben.jpg" alt="Dr. Ben" className="w-full h-full object-cover object-top" />

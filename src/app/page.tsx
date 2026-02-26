@@ -158,7 +158,7 @@ export default function HomePage() {
         {/* Fundo fotográfico + gradiente */}
         <div className="absolute inset-0">
           <img
-            src="/home-hero.jpg"
+            src="/hero-lobby.jpg"
             alt=""
             className="w-full h-full object-cover object-center"
           />
@@ -166,7 +166,7 @@ export default function HomePage() {
             className="absolute inset-0"
             style={{
               background:
-                'linear-gradient(90deg,rgba(7,24,46,0.97) 0%,rgba(7,24,46,0.90) 50%,rgba(7,24,46,0.55) 100%)',
+                'linear-gradient(90deg,rgba(7,24,46,0.97) 0%,rgba(7,24,46,0.80) 45%,rgba(7,24,46,0.15) 100%)',
             }}
           />
           <div
@@ -242,8 +242,8 @@ export default function HomePage() {
                   href={waUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 text-white px-7 py-3.5 rounded-full text-sm font-bold hover:brightness-110 transition-all shadow-lg"
-                  style={{ background: '#b91c1c', border: '2px solid #D4A017', boxShadow: '0 0 14px rgba(212,160,23,0.35), 0 3px 10px rgba(185,28,28,0.45)' }}
+                  className="inline-flex items-center gap-2.5 text-[#19385C] px-7 py-3.5 rounded-full text-sm font-bold hover:brightness-110 transition-all shadow-lg"
+                  style={{ background: '#D4A017', boxShadow: '0 0 14px rgba(212,160,23,0.4)' }}
                 >
                   <div className="w-7 h-7 rounded-full overflow-hidden border border-[#D4A017]/80 shrink-0">
                     <img src="/dr-ben.jpg" alt="Dr. Ben" className="w-full h-full object-cover object-top" />
@@ -491,8 +491,8 @@ export default function HomePage() {
                 href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 text-white px-6 py-3 rounded-full font-bold transition-all text-sm"
-                style={{ background: '#b91c1c', border: '2px solid #D4A017', boxShadow: '0 0 12px rgba(212,160,23,0.3)' }}
+                className="inline-flex items-center gap-2.5 text-[#19385C] px-6 py-3 rounded-full font-bold transition-all text-sm hover:brightness-110"
+                style={{ background: '#D4A017', boxShadow: '0 0 12px rgba(212,160,23,0.35)' }}
               >
                 <div className="w-6 h-6 rounded-full overflow-hidden border border-[#D4A017]/80 shrink-0">
                   <img src="/dr-ben.jpg" alt="Dr. Ben" className="w-full h-full object-cover object-top" />
@@ -589,8 +589,8 @@ export default function HomePage() {
             href={waUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 text-white px-8 py-4 rounded-full text-base font-bold transition-all"
-            style={{ background: '#b91c1c', border: '2px solid #D4A017', boxShadow: '0 0 20px rgba(212,160,23,0.4), 0 4px 14px rgba(185,28,28,0.5)' }}
+            className="inline-flex items-center gap-3 text-[#19385C] px-8 py-4 rounded-full text-base font-bold hover:brightness-110 transition-all"
+            style={{ background: '#D4A017', boxShadow: '0 0 20px rgba(212,160,23,0.5)' }}
           >
             <div className="w-9 h-9 rounded-full overflow-hidden border-2 border-[#D4A017]/80 shrink-0">
               <img src="/dr-ben.jpg" alt="Dr. Ben" className="w-full h-full object-cover object-top" />

@@ -279,8 +279,8 @@ export default function AreasPage() {
             href={waUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 text-white px-8 py-4 rounded-full text-base font-bold transition-all"
-            style={{ background: '#b91c1c', border: '2px solid #D4A017', boxShadow: '0 0 20px rgba(212,160,23,0.4), 0 4px 14px rgba(185,28,28,0.5)' }}
+            className="inline-flex items-center gap-3 text-[#19385C] px-8 py-4 rounded-full text-base font-bold hover:brightness-110 transition-all"
+            style={{ background: '#D4A017', boxShadow: '0 0 20px rgba(212,160,23,0.5)' }}
           >
             <div className="w-9 h-9 rounded-full overflow-hidden border-2 border-[#D4A017]/80 shrink-0">
               <img src="/dr-ben.jpg" alt="Dr. Ben" className="w-full h-full object-cover object-top" />
