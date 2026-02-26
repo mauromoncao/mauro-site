@@ -267,58 +267,95 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* ── DIREITA — card visual moderno e elegante ── */}
+            {/* ── DIREITA — card visual moderno com imagem ── */}
             <div className="relative order-1 lg:order-2 flex justify-center items-center pb-8 lg:pb-0">
               <div
                 className="relative w-full max-w-[460px] rounded-3xl overflow-hidden shadow-2xl"
                 style={{
-                  background: 'linear-gradient(160deg,#0d2647 0%,#0f2340 60%,#071828 100%)',
-                  border: '1px solid rgba(212,160,23,0.25)',
-                  boxShadow: '0 0 60px rgba(212,160,23,0.12), 0 24px 60px rgba(0,0,0,0.5)',
+                  border: '1px solid rgba(212,160,23,0.30)',
+                  boxShadow: '0 0 60px rgba(212,160,23,0.15), 0 24px 60px rgba(0,0,0,0.6)',
                 }}
               >
-                {/* Faixa dourada superior decorativa */}
-                <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg,transparent,#D4A017,#F0C040,#D4A017,transparent)' }} />
+                {/* Faixa dourada superior */}
+                <div className="h-[3px] w-full" style={{ background: 'linear-gradient(90deg,transparent,#D4A017,#F0C040,#D4A017,transparent)' }} />
 
-                {/* Topo: Logo + Slogan */}
-                <div className="px-8 pt-6 pb-5 flex flex-col items-center text-center border-b border-[#D4A017]/15">
+                {/* Imagem de fundo — escritório moderno */}
+                <div className="relative" style={{ aspectRatio: '4/3' }}>
                   <img
-                    src="/logo-oficial-dourado.png"
-                    alt="Mauro Monção Advogados Associados"
-                    className="h-20 w-auto object-contain mb-3"
-                    style={{ filter: 'drop-shadow(0 0 12px rgba(212,160,23,0.6))', imageRendering: 'crisp-edges' }}
+                    src="/hero-card-modern.jpg"
+                    alt="Advocacia Especializada"
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
-                  <p className="text-[#D4A017]/80 text-[11px] font-bold uppercase tracking-[.3em]">
-                    Advocacia Especializada
-                  </p>
-                </div>
+                  {/* Overlay gradient escuro */}
+                  <div
+                    className="absolute inset-0"
+                    style={{ background: 'linear-gradient(160deg, rgba(7,24,46,0.72) 0%, rgba(15,35,64,0.55) 50%, rgba(7,24,46,0.80) 100%)' }}
+                  />
 
-                {/* Cards de áreas de destaque */}
-                <div className="px-6 py-5 space-y-3">
-                  {[
-                    { icon: '⚖️', label: 'Direito Tributário', desc: 'Recuperação e planejamento fiscal' },
-                    { icon: '🏛️', label: 'Planejamento Patrimonial', desc: 'Proteção e sucessão de patrimônio' },
-                    { icon: '📋', label: 'Advocacia Pública', desc: 'Atuação junto a entes públicos' },
-                  ].map((item) => (
-                    <div
-                      key={item.label}
-                      className="flex items-center gap-4 rounded-2xl px-4 py-3"
-                      style={{ background: 'rgba(212,160,23,0.07)', border: '1px solid rgba(212,160,23,0.12)' }}
-                    >
-                      <span className="text-xl shrink-0">{item.icon}</span>
-                      <div>
-                        <p className="text-white font-semibold text-sm leading-tight">{item.label}</p>
-                        <p className="text-white/50 text-[12px] mt-0.5">{item.desc}</p>
-                      </div>
-                      <svg className="w-4 h-4 text-[#D4A017]/50 ml-auto shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                      </svg>
+                  {/* Conteúdo sobre a imagem */}
+                  <div className="absolute inset-0 flex flex-col justify-between p-6 z-10">
+                    {/* Logo topo */}
+                    <div className="flex items-center justify-center">
+                      <img
+                        src="/logo-cropped-gold.png"
+                        alt="Mauro Monção"
+                        className="h-14 w-auto object-contain"
+                        style={{ filter: 'drop-shadow(0 0 10px rgba(212,160,23,0.8))', imageRendering: 'crisp-edges' }}
+                      />
                     </div>
-                  ))}
+
+                    {/* Título central */}
+                    <div className="text-center">
+                      <p className="text-[#D4A017] text-[10px] font-bold uppercase tracking-[.35em] mb-3">
+                        Advocacia Especializada
+                      </p>
+
+                      {/* 3 áreas em cards compactos */}
+                      <div className="space-y-2">
+                        {[
+                          { svg: 'M12 1l9 4-9 4-9-4 9-4zM2 9l10 4 10-4M2 15l10 4 10-4', label: 'Direito Tributário',       desc: 'Recuperação e planejamento fiscal' },
+                          { svg: 'M3 21h18M6 21V7l6-4 6 4v14M9 21v-5h6v5',              label: 'Planejamento Patrimonial',  desc: 'Proteção e sucessão de patrimônio' },
+                          { svg: 'M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM9 12h6M9 16h4', label: 'Advocacia Pública', desc: 'Atuação junto a entes públicos' },
+                        ].map((item) => (
+                          <div
+                            key={item.label}
+                            className="flex items-center gap-3 rounded-xl px-3.5 py-2.5"
+                            style={{ background: 'rgba(7,24,46,0.75)', backdropFilter: 'blur(8px)', border: '1px solid rgba(212,160,23,0.20)' }}
+                          >
+                            <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0" style={{ background: 'rgba(212,160,23,0.15)', border: '1px solid rgba(212,160,23,0.3)' }}>
+                              <svg className="w-3.5 h-3.5 text-[#D4A017]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                <path d={item.svg}/>
+                              </svg>
+                            </div>
+                            <div className="text-left">
+                              <p className="text-white font-semibold text-[12px] leading-tight">{item.label}</p>
+                              <p className="text-white/55 text-[10px] mt-0.5">{item.desc}</p>
+                            </div>
+                            <svg className="w-3.5 h-3.5 text-[#D4A017]/40 ml-auto shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                              <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Sedes */}
+                    <div className="flex items-center justify-center gap-5">
+                      {['PI – Parnaíba', 'CE – Fortaleza'].map((loc) => (
+                        <div key={loc} className="flex items-center gap-1.5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017] shrink-0" />
+                          <span className="text-white/70 text-[11px] font-medium tracking-wide">{loc}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
-                {/* Stats row — linha de destaque */}
-                <div className="grid grid-cols-4 border-t border-[#D4A017]/15">
+                {/* Stats row */}
+                <div
+                  className="grid grid-cols-4"
+                  style={{ background: 'rgba(7,24,46,0.97)', borderTop: '1px solid rgba(212,160,23,0.20)' }}
+                >
                   {[
                     { v: '+15', l: 'Anos' },
                     { v: '500+', l: 'Clientes' },
@@ -327,26 +364,17 @@ export default function HomePage() {
                   ].map((s, i) => (
                     <div
                       key={s.l}
-                      className={`py-4 text-center ${i < 3 ? 'border-r border-[#D4A017]/10' : ''}`}
+                      className="py-3.5 text-center"
+                      style={{ borderRight: i < 3 ? '1px solid rgba(212,160,23,0.10)' : 'none' }}
                     >
                       <p className="text-[#D4A017] font-black text-lg font-serif leading-none">{s.v}</p>
-                      <p className="text-white/55 text-[10px] mt-1 uppercase tracking-wider">{s.l}</p>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Sedes */}
-                <div className="px-6 py-3 border-t border-[#D4A017]/10 flex items-center justify-center gap-6">
-                  {['PI – Parnaíba', 'CE – Fortaleza'].map((loc) => (
-                    <div key={loc} className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017] shrink-0" />
-                      <span className="text-white/60 text-[12px] font-medium">{loc}</span>
+                      <p className="text-white/50 text-[10px] mt-1 uppercase tracking-wider">{s.l}</p>
                     </div>
                   ))}
                 </div>
 
                 {/* Faixa dourada inferior */}
-                <div className="h-0.5 w-full" style={{ background: 'linear-gradient(90deg,transparent,#D4A017,#F0C040,#D4A017,transparent)' }} />
+                <div className="h-[3px] w-full" style={{ background: 'linear-gradient(90deg,transparent,#D4A017,#F0C040,#D4A017,transparent)' }} />
               </div>
 
               {/* Badge Dr. Ben — DOURADO + foto */}
@@ -595,12 +623,17 @@ export default function HomePage() {
             href={waUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 text-[#19385C] px-8 py-4 rounded-full text-base font-bold hover:brightness-110 transition-all"
-            style={{ background: '#D4A017', boxShadow: '0 0 20px rgba(212,160,23,0.5)' }}
+            className="inline-flex items-center gap-3 text-[#0f2340] px-8 py-4 rounded-full text-base font-bold hover:brightness-110 transition-all"
+            style={{ background: 'linear-gradient(135deg,#D4A017,#F0C040)', boxShadow: '0 0 24px rgba(212,160,23,0.55)' }}
           >
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/>
-            </svg>
+            <div
+              className="w-9 h-9 rounded-full p-0.5 shrink-0"
+              style={{ background: 'linear-gradient(135deg,#0f2340,#19385C)' }}
+            >
+              <div className="w-full h-full rounded-full overflow-hidden border border-[#D4A017]/50">
+                <img src="/dr-ben.jpg" alt="Dr. Ben" className="w-full h-full object-cover object-top" />
+              </div>
+            </div>
             Falar com Dr. Ben — 24h
           </a>
         </div>

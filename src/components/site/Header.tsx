@@ -90,13 +90,12 @@ export default function Header() {
         {/* ── LOGO OFICIAL DOURADO — DESTAQUE MÁXIMO ── */}
         <Link href="/" className="flex items-center shrink-0">
           <img
-            src="/logo-oficial-dourado.png"
+            src="/logo-cropped-gold.png"
             alt="Mauro Monção Advogados Associados"
-            className="h-[84px] w-auto object-contain"
+            className="h-[58px] w-auto object-contain"
             style={{
-              filter: 'drop-shadow(0 0 14px rgba(212,160,23,0.85)) drop-shadow(0 0 4px rgba(240,192,64,0.6))',
+              filter: 'drop-shadow(0 0 12px rgba(212,160,23,0.9)) drop-shadow(0 0 4px rgba(240,192,64,0.7))',
               imageRendering: 'crisp-edges',
-              WebkitFontSmoothing: 'antialiased',
             }}
           />
         </Link>
