@@ -242,14 +242,14 @@ export default function HomePage() {
                   href={waUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 text-[#19385C] px-7 py-3.5 rounded-full text-sm font-bold hover:brightness-110 transition-all shadow-lg"
-                  style={{ background: '#D4A017', boxShadow: '0 0 14px rgba(212,160,23,0.4)' }}
+                  className="inline-flex items-center gap-2.5 text-[#0f2340] px-7 py-3.5 rounded-full text-sm font-bold hover:brightness-110 transition-all shadow-lg"
+                  style={{ background: 'linear-gradient(135deg, #D4A017, #F0C040)', boxShadow: '0 0 18px rgba(212,160,23,0.55)' }}
                 >
-                  <div className="w-7 h-7 rounded-full overflow-hidden border border-[#D4A017]/80 shrink-0">
-                    <img src="/dr-ben.jpg" alt="Dr. Ben" className="w-full h-full object-cover object-top" />
-                  </div>
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/>
+                  </svg>
                   Falar com Dr. Ben
-                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse shrink-0" />
+                  <span className="w-2 h-2 rounded-full bg-green-600 shrink-0" />
                 </a>
                 <Link
                   href="/areas-de-atuacao"
@@ -348,18 +348,23 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Badge Dr. Ben — VERMELHO + DOURADO */}
+              {/* Badge Dr. Ben — DOURADO + foto */}
               <a
                 href="/assistente-juridico"
                 className="absolute -bottom-4 -right-2 lg:-right-6 rounded-2xl px-3.5 py-2.5 flex items-center gap-2.5 shadow-2xl cursor-pointer hover:scale-105 transition-transform"
-                style={{ background: '#b91c1c', border: '2px solid #D4A017', boxShadow: '0 0 16px rgba(212,160,23,0.4), 0 4px 12px rgba(185,28,28,0.5)' }}
+                style={{ background: 'linear-gradient(135deg,#0f2340,#19385C)', border: '2px solid #D4A017', boxShadow: '0 0 18px rgba(212,160,23,0.55), 0 4px 12px rgba(0,0,0,0.5)' }}
               >
-                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#D4A017] shrink-0">
-                  <img src="/dr-ben.jpg" alt="Dr. Ben" className="w-full h-full object-cover object-top" />
+                <div
+                  className="w-10 h-10 rounded-full p-0.5 shrink-0"
+                  style={{ background: 'linear-gradient(135deg,#D4A017,#F0C040)' }}
+                >
+                  <div className="w-full h-full rounded-full overflow-hidden">
+                    <img src="/dr-ben.jpg" alt="Dr. Ben" className="w-full h-full object-cover object-top" />
+                  </div>
                 </div>
                 <div>
-                  <p className="text-white text-xs font-bold leading-none">Dr. Ben</p>
-                  <p className="text-[#D4A017] text-xs mt-0.5 font-semibold">Assistente 24h</p>
+                  <p className="text-[#D4A017] text-xs font-bold leading-none">Dr. Ben</p>
+                  <p className="text-white/80 text-xs mt-0.5 font-semibold">Assistente 24h</p>
                 </div>
                 <span className="w-2.5 h-2.5 rounded-full bg-green-400 animate-badge-pulse ml-1 shrink-0" />
               </a>
@@ -494,10 +499,10 @@ export default function HomePage() {
                 className="inline-flex items-center gap-2.5 text-[#19385C] px-6 py-3 rounded-full font-bold transition-all text-sm hover:brightness-110"
                 style={{ background: '#D4A017', boxShadow: '0 0 12px rgba(212,160,23,0.35)' }}
               >
-                <div className="w-6 h-6 rounded-full overflow-hidden border border-[#D4A017]/80 shrink-0">
-                  <img src="/dr-ben.jpg" alt="Dr. Ben" className="w-full h-full object-cover object-top" />
-                </div>
-                Agendar com Dr. Ben
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/>
+                  </svg>
+                Agendar Consulta Gratuita
               </a>
             </div>
           </div>
@@ -592,11 +597,10 @@ export default function HomePage() {
             className="inline-flex items-center gap-3 text-[#19385C] px-8 py-4 rounded-full text-base font-bold hover:brightness-110 transition-all"
             style={{ background: '#D4A017', boxShadow: '0 0 20px rgba(212,160,23,0.5)' }}
           >
-            <div className="w-9 h-9 rounded-full overflow-hidden border-2 border-[#D4A017]/80 shrink-0">
-              <img src="/dr-ben.jpg" alt="Dr. Ben" className="w-full h-full object-cover object-top" />
-            </div>
-            Falar com Dr. Ben
-            <span className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse shrink-0" />
+            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/>
+            </svg>
+            Falar com Dr. Ben — 24h
           </a>
         </div>
       </section>

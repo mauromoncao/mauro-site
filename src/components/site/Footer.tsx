@@ -111,9 +111,19 @@ export default function Footer() {
                   <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.72 9.72a19.79 19.79 0 01-3.07-8.67A2 2 0 012.48 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006.35 6.35l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
                 </svg>
                 <div className="space-y-1">
-                  <p><span className="text-[#D4A017] font-semibold">Dr. Ben 24h:</span> {phoneDrBen}</p>
-                  <p><span className="text-[#D4A017] font-semibold">Dr. Mauro:</span> {phoneDrMauro}</p>
-                  <p><span className="text-[#D4A017] font-semibold">Escritório:</span> {phoneOffice}</p>
+                  <p>
+                    <span className="text-[#D4A017] font-semibold">Central 24h: </span>
+                    <a
+                      href={`https://wa.me/${phone}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/90 hover:text-[#D4A017] transition-colors font-medium"
+                    >
+                      {phoneDrBen}
+                    </a>
+                  </p>
+                  <p><span className="text-[#D4A017] font-semibold">Dr. Mauro:</span> <span className="text-white/80">{phoneDrMauro}</span></p>
+                  <p><span className="text-[#D4A017] font-semibold">Escritório:</span> <span className="text-white/80">{phoneOffice}</span></p>
                 </div>
               </div>
 
@@ -152,13 +162,13 @@ export default function Footer() {
               href={`https://wa.me/${phone}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-red-700 border-2 border-[#D4A017] text-white px-5 py-3 rounded-full text-[14px] font-bold hover:bg-red-600 transition-all shadow-lg"
-              style={{ boxShadow: '0 0 12px rgba(212,160,23,0.3)' }}
+              className="inline-flex items-center gap-3 text-[#0f2340] px-5 py-3 rounded-full text-[14px] font-bold hover:brightness-110 transition-all shadow-lg"
+              style={{ background: 'linear-gradient(135deg,#D4A017,#F0C040)', boxShadow: '0 0 16px rgba(212,160,23,0.5)' }}
             >
-              <div className="w-8 h-8 rounded-full overflow-hidden border border-[#D4A017]/80 shrink-0">
-                <img src="/dr-ben.jpg" alt="Dr. Ben" className="w-full h-full object-cover object-top" />
-              </div>
-              Falar com Dr. Ben
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/>
+              </svg>
+              Central de Atendimento 24h
             </a>
           </div>
         </div>

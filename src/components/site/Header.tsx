@@ -84,16 +84,18 @@ export default function Header() {
   );
 
   return (
-    <header className="bg-[#19385C] sticky top-0 z-50 shadow-lg border-b border-[#D4A017]/20">
-      <div className="container flex items-center justify-between h-[80px] gap-4">
+    <header className="bg-[#0f2340] sticky top-0 z-50 shadow-xl border-b-2 border-[#D4A017]/50">
+      <div className="container flex items-center justify-between h-[88px] gap-4">
 
-        {/* ── LOGO OFICIAL DOURADO ── */}
+        {/* ── LOGO OFICIAL DOURADO — DESTAQUE MÁXIMO ── */}
         <Link href="/" className="flex items-center shrink-0">
           <img
             src="/logo-oficial-dourado.png"
             alt="Mauro Monção Advogados Associados"
-            className="h-[68px] w-auto object-contain"
-            style={{ filter: 'drop-shadow(0 0 10px rgba(212,160,23,0.55))' }}
+            className="h-[80px] w-auto object-contain"
+            style={{
+              filter: 'drop-shadow(0 0 18px rgba(212,160,23,0.75)) drop-shadow(0 0 6px rgba(212,160,23,0.5))',
+            }}
           />
         </Link>
 
@@ -122,7 +124,7 @@ export default function Header() {
 
             {areasOpen && (
               <div
-                className="absolute top-full left-0 mt-2 w-64 bg-[#19385C] border border-[#D4A017]/30 rounded-xl shadow-2xl py-2 z-50"
+                className="absolute top-full left-0 mt-2 w-64 bg-[#0f2340] border border-[#D4A017]/40 rounded-xl shadow-2xl py-2 z-50"
                 onMouseLeave={() => setAreasOpen(false)}
               >
                 {areasDropdown.map((item, idx) => (
@@ -151,20 +153,24 @@ export default function Header() {
           {navLink('/faq', 'FAQ')}
           {navLink('/contato', 'Contato')}
 
-          {/* ── Dr. Ben badge — VERMELHO com borda DOURADA ── */}
+          {/* ── Dr. Ben badge — DOURADO com foto + borda ouro ── */}
           <a
             href="/assistente-juridico"
-            className="flex items-center gap-2 bg-red-700 border-2 border-[#D4A017] text-white px-3.5 py-2 rounded-full text-[13px] font-bold hover:bg-red-600 hover:border-[#F0C040] transition-all whitespace-nowrap shadow-lg shadow-red-900/30"
-            style={{ boxShadow: '0 0 12px rgba(212,160,23,0.35), 0 2px 8px rgba(185,28,28,0.4)' }}
+            className="flex items-center gap-2 border-2 text-[#0f2340] px-3.5 py-2 rounded-full text-[13px] font-bold transition-all whitespace-nowrap shadow-lg"
+            style={{
+              background: 'linear-gradient(135deg, #D4A017, #F0C040, #C8960E)',
+              borderColor: '#F0C040',
+              boxShadow: '0 0 16px rgba(212,160,23,0.6), 0 2px 8px rgba(0,0,0,0.3)',
+            }}
           >
-            <div className="w-6 h-6 rounded-full overflow-hidden border border-[#D4A017]/80 shrink-0">
+            <div className="w-6 h-6 rounded-full overflow-hidden border-2 border-[#0f2340]/30 shrink-0">
               <img src="/dr-ben.jpg" alt="Dr. Ben" className="w-full h-full object-cover object-top" />
             </div>
-            <span>Dr. Ben</span>
-            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse shrink-0" />
+            <span className="font-black">Dr. Ben</span>
+            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse shrink-0 shadow-sm" />
           </a>
 
-          {/* Tributoflix */}
+          {/* Tributoflix — ÚNICO botão vermelho permitido */}
           <a
             href="https://tributoflix.com.br"
             target="_blank"
@@ -174,18 +180,19 @@ export default function Header() {
             ▶ TRIBUTOFLIX
           </a>
 
-          {/* CTA WhatsApp */}
+          {/* CTA WhatsApp — DOURADO */}
           <a
             href={`https://wa.me/${phone}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#D4A017] text-[#19385C] px-5 py-2.5 rounded-full text-[14px] font-bold hover:brightness-110 transition-all whitespace-nowrap shadow-md"
+            className="bg-[#D4A017] text-[#0f2340] px-5 py-2.5 rounded-full text-[14px] font-bold hover:brightness-110 transition-all whitespace-nowrap shadow-md"
+            style={{ boxShadow: '0 0 12px rgba(212,160,23,0.45)' }}
           >
             Fale Conosco
           </a>
 
           {/* Sociais */}
-          <div className="flex items-center gap-2.5 border-l border-[#D4A017]/30 pl-3">
+          <div className="flex items-center gap-2.5 border-l border-[#D4A017]/40 pl-3">
             {socialLinks.map((s) => (
               <a
                 key={s.label}
@@ -221,7 +228,7 @@ export default function Header() {
 
       {/* ── MOBILE NAV ── */}
       {mobileOpen && (
-        <div className="xl:hidden bg-[#19385C] border-t border-[#D4A017]/20 px-4 pb-6">
+        <div className="xl:hidden bg-[#0f2340] border-t border-[#D4A017]/30 px-4 pb-6">
           <div className="flex flex-col gap-0.5 pt-3">
             {[
               { href: '/',                    label: 'Início' },
@@ -242,26 +249,35 @@ export default function Header() {
               </Link>
             ))}
 
-            {/* Dr. Ben mobile — vermelho + dourado */}
+            {/* Dr. Ben mobile — DOURADO com foto */}
             <a
               href="/assistente-juridico"
-              className="mt-4 flex items-center justify-center gap-3 bg-red-700 border-2 border-[#D4A017] text-white py-3.5 rounded-full text-[15px] font-bold"
+              className="mt-4 flex items-center justify-center gap-3 border-2 text-[#0f2340] py-3.5 rounded-full text-[15px] font-bold"
+              style={{
+                background: 'linear-gradient(135deg, #D4A017, #F0C040, #C8960E)',
+                borderColor: '#F0C040',
+                boxShadow: '0 0 16px rgba(212,160,23,0.5)',
+              }}
             >
-              <div className="w-7 h-7 rounded-full overflow-hidden border border-[#D4A017]/80">
+              <div className="w-7 h-7 rounded-full overflow-hidden border-2 border-[#0f2340]/30">
                 <img src="/dr-ben.jpg" alt="Dr. Ben" className="w-full h-full object-cover object-top" />
               </div>
-              Dr. Ben — Assistente IA
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+              <span className="font-black">Dr. Ben — Assistente IA</span>
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             </a>
 
+            {/* Fale Conosco — DOURADO */}
             <a
               href={`https://wa.me/${phone}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 bg-[#D4A017] text-[#19385C] text-center px-4 py-3.5 rounded-full text-[15px] font-bold"
+              className="mt-2 bg-[#D4A017] text-[#0f2340] text-center px-4 py-3.5 rounded-full text-[15px] font-bold hover:brightness-110 transition-all"
+              style={{ boxShadow: '0 0 12px rgba(212,160,23,0.4)' }}
             >
               Fale Conosco
             </a>
+
+            {/* Tributoflix — ÚNICO vermelho */}
             <a
               href="https://tributoflix.com.br"
               target="_blank"
@@ -270,6 +286,7 @@ export default function Header() {
             >
               ▶ TRIBUTOFLIX
             </a>
+
             <div className="flex items-center justify-center gap-5 mt-5">
               {socialLinks.map((s) => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
