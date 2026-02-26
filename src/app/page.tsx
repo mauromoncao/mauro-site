@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import SiteLayout from '@/components/site/SiteLayout';
 import Link from 'next/link';
+import FaqSection from '@/components/site/FaqSection';
 
 export const metadata: Metadata = {
   title: 'Advocacia Tributária e Patrimonial em Parnaíba, Fortaleza e São Luís',
@@ -553,6 +554,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ══════════════════════════════════════
+          FAQ
+      ══════════════════════════════════════ */}
+      <FaqSection />
 
       {/* ══════════════════════════════════════
           CTA FINAL
