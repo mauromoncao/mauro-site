@@ -85,16 +85,16 @@ export default function Header() {
 
   return (
     <header className="bg-[#0f2340] sticky top-0 z-50 shadow-xl border-b-2 border-[#D4A017]/50">
-      <div className="container flex items-center justify-between h-[88px] gap-4">
+      <div className="container flex items-center justify-between h-[96px] gap-4">
 
         {/* ── LOGO OFICIAL DOURADO — DESTAQUE MÁXIMO ── */}
         <Link href="/" className="flex items-center shrink-0">
           <img
-            src="/logo-cropped-gold.png"
+            src="/logo-sharp.png"
             alt="Mauro Monção Advogados Associados"
-            className="h-[58px] w-auto object-contain"
+            className="h-[72px] w-auto object-contain"
             style={{
-              filter: 'drop-shadow(0 0 12px rgba(212,160,23,0.9)) drop-shadow(0 0 4px rgba(240,192,64,0.7))',
+              filter: 'drop-shadow(0 0 10px rgba(212,160,23,0.85)) drop-shadow(0 0 3px rgba(240,192,64,0.6))',
               imageRendering: 'crisp-edges',
             }}
           />

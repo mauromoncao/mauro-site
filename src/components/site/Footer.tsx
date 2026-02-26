@@ -41,10 +41,10 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="mb-6">
               <img
-                src="/logo-cropped-gold.png"
+                src="/logo-sharp.png"
                 alt="Mauro Monção Advogados Associados"
                 className="h-20 w-auto object-contain"
-                style={{ filter: 'drop-shadow(0 0 8px rgba(212,160,23,0.4))' }}
+                style={{ filter: 'drop-shadow(0 0 8px rgba(212,160,23,0.5))', imageRendering: 'crisp-edges' }}
               />
             </div>
             <p className="text-white/80 text-[15px] leading-relaxed">
