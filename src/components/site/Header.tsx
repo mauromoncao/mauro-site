@@ -90,10 +90,10 @@ export default function Header() {
         {/* ── LOGO OFICIAL DOURADO — DESTAQUE MÁXIMO ── */}
         <Link href="/" className="flex items-center shrink-0">
           <img
-            src="/logo-vector.svg"
+            src="/logo-final.png"
             alt="Mauro Monção Advogados Associados"
-            className="h-[76px] w-auto"
-            style={{ filter: 'drop-shadow(0 0 8px rgba(212,160,23,0.5))' }}
+            className="h-[72px] w-auto"
+            style={{ imageRendering: 'crisp-edges' }}
           />
         </Link>
 
