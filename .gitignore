@@ -37,3 +37,9 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
+
+# OS / crash dumps
+core
+*.core
+.DS_Store
+Thumbs.db
