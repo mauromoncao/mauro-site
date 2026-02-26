@@ -295,10 +295,10 @@ export default function HomePage() {
                   {/* Apenas logo centralizada sobre a imagem */}
                   <div className="absolute inset-0 flex items-center justify-center z-10">
                     <img
-                      src="/logo-sharp.png"
+                      src="/logo-vector.svg"
                       alt="Mauro Monção"
-                      className="h-16 w-auto object-contain"
-                      style={{ filter: 'drop-shadow(0 0 14px rgba(212,160,23,0.9))', imageRendering: 'crisp-edges' }}
+                      className="h-16 w-auto"
+                      style={{ filter: 'drop-shadow(0 0 12px rgba(212,160,23,0.7))' }}
                     />
                   </div>
                 </div>
