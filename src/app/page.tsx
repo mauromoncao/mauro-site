@@ -292,62 +292,14 @@ export default function HomePage() {
                     style={{ background: 'linear-gradient(160deg, rgba(7,24,46,0.72) 0%, rgba(15,35,64,0.55) 50%, rgba(7,24,46,0.80) 100%)' }}
                   />
 
-                  {/* Conteúdo sobre a imagem */}
-                  <div className="absolute inset-0 flex flex-col justify-between p-6 z-10">
-                    {/* Logo topo */}
-                    <div className="flex items-center justify-center">
-                      <img
-                        src="/logo-cropped-gold.png"
-                        alt="Mauro Monção"
-                        className="h-14 w-auto object-contain"
-                        style={{ filter: 'drop-shadow(0 0 10px rgba(212,160,23,0.8))', imageRendering: 'crisp-edges' }}
-                      />
-                    </div>
-
-                    {/* Título central */}
-                    <div className="text-center">
-                      <p className="text-[#D4A017] text-[10px] font-bold uppercase tracking-[.35em] mb-3">
-                        Advocacia Especializada
-                      </p>
-
-                      {/* 3 áreas em cards compactos */}
-                      <div className="space-y-2">
-                        {[
-                          { svg: 'M12 1l9 4-9 4-9-4 9-4zM2 9l10 4 10-4M2 15l10 4 10-4', label: 'Direito Tributário',       desc: 'Recuperação e planejamento fiscal' },
-                          { svg: 'M3 21h18M6 21V7l6-4 6 4v14M9 21v-5h6v5',              label: 'Planejamento Patrimonial',  desc: 'Proteção e sucessão de patrimônio' },
-                          { svg: 'M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM9 12h6M9 16h4', label: 'Advocacia Pública', desc: 'Atuação junto a entes públicos' },
-                        ].map((item) => (
-                          <div
-                            key={item.label}
-                            className="flex items-center gap-3 rounded-xl px-3.5 py-2.5"
-                            style={{ background: 'rgba(7,24,46,0.75)', backdropFilter: 'blur(8px)', border: '1px solid rgba(212,160,23,0.20)' }}
-                          >
-                            <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0" style={{ background: 'rgba(212,160,23,0.15)', border: '1px solid rgba(212,160,23,0.3)' }}>
-                              <svg className="w-3.5 h-3.5 text-[#D4A017]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                                <path d={item.svg}/>
-                              </svg>
-                            </div>
-                            <div className="text-left">
-                              <p className="text-white font-semibold text-[12px] leading-tight">{item.label}</p>
-                              <p className="text-white/55 text-[10px] mt-0.5">{item.desc}</p>
-                            </div>
-                            <svg className="w-3.5 h-3.5 text-[#D4A017]/40 ml-auto shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                              <path d="M5 12h14M12 5l7 7-7 7"/>
-                            </svg>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Sedes */}
-                    <div className="flex items-center justify-center gap-5">
-                      {['PI – Parnaíba', 'CE – Fortaleza'].map((loc) => (
-                        <div key={loc} className="flex items-center gap-1.5">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017] shrink-0" />
-                          <span className="text-white/70 text-[11px] font-medium tracking-wide">{loc}</span>
-                        </div>
-                      ))}
-                    </div>
+                  {/* Apenas logo centralizada sobre a imagem */}
+                  <div className="absolute inset-0 flex items-center justify-center z-10">
+                    <img
+                      src="/logo-cropped-gold.png"
+                      alt="Mauro Monção"
+                      className="h-16 w-auto object-contain"
+                      style={{ filter: 'drop-shadow(0 0 14px rgba(212,160,23,0.9))', imageRendering: 'crisp-edges' }}
+                    />
                   </div>
                 </div>
 
