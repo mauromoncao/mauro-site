@@ -9,5 +9,30 @@ const nextConfig = {
     domains: [],
     unoptimized: true,
   },
+  async redirects() {
+    return [
+      // Redireciona rotas internas para os subdomínios dedicados
+      {
+        source: "/blog/:path*",
+        destination: "https://blog.mauromoncao.adv.br/:path*",
+        permanent: true,
+      },
+      {
+        source: "/solucoes-juridicas/:path*",
+        destination: "https://solucoes.mauromoncao.adv.br/:path*",
+        permanent: true,
+      },
+      {
+        source: "/assistente-juridico/:path*",
+        destination: "https://drben.mauromoncao.adv.br/:path*",
+        permanent: true,
+      },
+      {
+        source: "/dr-ben/:path*",
+        destination: "https://drben.mauromoncao.adv.br/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 module.exports = nextConfig;
