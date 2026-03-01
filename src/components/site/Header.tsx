@@ -168,25 +168,21 @@ export default function Header() {
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse shrink-0 shadow-sm" />
           </a>
 
-          {/* Tributoflix — ÚNICO botão vermelho permitido */}
+          {/* BEN Strategic Intelligence Hub — DOURADO */}
           <a
-            href="https://tributoflix.com.br"
+            href="https://hub.mauromoncao.adv.br"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 bg-red-700 text-white px-3 py-2 rounded text-[13px] font-black hover:bg-red-600 transition-colors whitespace-nowrap tracking-wide"
+            className="flex items-center gap-2 text-[#0f2340] px-4 py-2.5 rounded-full text-[13px] font-black hover:brightness-110 transition-all whitespace-nowrap shadow-lg"
+            style={{
+              background: 'linear-gradient(135deg, #D4A017, #F0C040, #C8960E)',
+              boxShadow: '0 0 16px rgba(212,160,23,0.55), 0 2px 8px rgba(0,0,0,0.3)',
+            }}
           >
-            ▶ TRIBUTOFLIX
-          </a>
-
-          {/* CTA WhatsApp — DOURADO */}
-          <a
-            href={`https://wa.me/${phone}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-[#D4A017] text-[#0f2340] px-5 py-2.5 rounded-full text-[14px] font-bold hover:brightness-110 transition-all whitespace-nowrap shadow-md"
-            style={{ boxShadow: '0 0 12px rgba(212,160,23,0.45)' }}
-          >
-            Fale Conosco
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" className="shrink-0">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            BEN Strategic Intelligence Hub
           </a>
 
           {/* Sociais */}
@@ -264,25 +260,21 @@ export default function Header() {
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             </a>
 
-            {/* Fale Conosco — DOURADO */}
+            {/* BEN Strategic Intelligence Hub — DOURADO mobile */}
             <a
-              href={`https://wa.me/${phone}`}
+              href="https://hub.mauromoncao.adv.br"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 bg-[#D4A017] text-[#0f2340] text-center px-4 py-3.5 rounded-full text-[15px] font-bold hover:brightness-110 transition-all"
-              style={{ boxShadow: '0 0 12px rgba(212,160,23,0.4)' }}
+              className="mt-2 text-[#0f2340] text-center px-4 py-3.5 rounded-full text-[15px] font-black hover:brightness-110 transition-all flex items-center justify-center gap-2"
+              style={{
+                background: 'linear-gradient(135deg, #D4A017, #F0C040, #C8960E)',
+                boxShadow: '0 0 16px rgba(212,160,23,0.5)',
+              }}
             >
-              Fale Conosco
-            </a>
-
-            {/* Tributoflix — ÚNICO vermelho */}
-            <a
-              href="https://tributoflix.com.br"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 bg-red-700 text-white text-center px-4 py-3 rounded text-[14px] font-black"
-            >
-              ▶ TRIBUTOFLIX
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" className="shrink-0">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+              BEN Strategic Intelligence Hub
             </a>
 
             <div className="flex items-center justify-center gap-5 mt-5">
