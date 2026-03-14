@@ -1,15 +1,4 @@
 name = "mauro-site"
 compatibility_date = "2024-01-01"
 compatibility_flags = ["nodejs_compat"]
-
-# Next.js 13 on Cloudflare Pages uses @cloudflare/next-on-pages
-# Build command in CF dashboard: npx @cloudflare/next-on-pages
-# Output directory: .vercel/output/static
-pages_build_output_dir = ".vercel/output/static"
-
-[env.production]
-name = "mauro-site"
-
-[[env.production.routes]]
-pattern = "www.mauromoncao.adv.br/*"
-zone_name = "mauromoncao.adv.br"
+pages_build_output_dir = "out"
