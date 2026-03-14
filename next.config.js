@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   reactStrictMode: true,
   swcMinify: false,
   experimental: {
@@ -9,30 +10,7 @@ const nextConfig = {
     domains: [],
     unoptimized: true,
   },
-  async redirects() {
-    return [
-      // Redireciona rotas internas para os subdomínios dedicados
-      {
-        source: "/blog/:path*",
-        destination: "https://blog.mauromoncao.adv.br/:path*",
-        permanent: true,
-      },
-      {
-        source: "/solucoes-juridicas/:path*",
-        destination: "https://solucoes.mauromoncao.adv.br/:path*",
-        permanent: true,
-      },
-      {
-        source: "/assistente-juridico/:path*",
-        destination: "https://drben.mauromoncao.adv.br/:path*",
-        permanent: true,
-      },
-      {
-        source: "/dr-ben/:path*",
-        destination: "https://drben.mauromoncao.adv.br/:path*",
-        permanent: true,
-      },
-    ];
-  },
+  // Redirects não são suportados com output: 'export'
+  // Os redirecionamentos são gerenciados pelo Cloudflare Pages via _redirects
 };
 module.exports = nextConfig;

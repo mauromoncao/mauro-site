@@ -1,0 +1,4 @@
+/blog/*  https://blog.mauromoncao.adv.br/:splat  301
+/solucoes-juridicas/*  https://solucoes.mauromoncao.adv.br/:splat  301
+/assistente-juridico/*  https://drben.mauromoncao.adv.br/:splat  301
+/dr-ben/*  https://drben.mauromoncao.adv.br/:splat  301
